@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pl">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#s06-root { position:absolute; inset:0; }
+#s06-root .stage { position:absolute; inset:0; }
+
+#s06-root .tag { position:absolute; left:0; right:0; top:200px; text-align:center; font-size:44px; color:var(--muted); }
+#s06-root .ttl { position:absolute; left:80px; right:80px; top:290px; text-align:center; font-size:84px; }
+#s06-root .qr { position:absolute; }
+#s06-root .qr svg { display:block; width:100%; height:100%; }
+#s06-root .chip { position:absolute; height:110px; padding:0 34px; border-radius:55px; background:var(--panel); border:1.5px solid var(--line);
+  display:flex; align-items:center; gap:16px; font-size:46px; white-space:nowrap; }
+#s06-root .chip .ic { width:50px; height:50px; stroke-width:1.9; }
+
+#s06-root .ph { position:absolute; left:200px; right:200px; top:450px; height:620px; border-radius:56px; background:var(--panel); border:2.5px solid var(--line); }
+#s06-root .ph .sc { position:absolute; left:0; right:0; top:40px; display:flex; justify-content:center; align-items:center; gap:14px; font-size:38px; color:var(--muted); }
+#s06-root .ph .sc .ic { width:46px; height:46px; }
+#s06-root .ph .url { position:absolute; left:40px; right:40px; top:130px; padding:22px 28px; border-radius:24px; background:#0e1311; border:1.5px solid var(--line); font-size:40px; line-height:1.3; }
+#s06-root .ph .url .r { color:var(--yellow); font-weight:500; }
+#s06-root .ph .lab { position:absolute; left:40px; right:40px; top:330px; font-size:34px; color:var(--yellow); text-align:right; }
+#s06-root .ph .inp { position:absolute; left:40px; right:40px; top:420px; height:110px; border-radius:24px; background:#0e1311; border:1.5px solid var(--line);
+  display:flex; align-items:center; padding:0 28px; font-size:44px; color:var(--muted); }
+#s06-root .ph .x { position:absolute; right:60px; top:440px; width:70px; height:70px; border-radius:50%; background:#3a1d1a; color:#ff6b5b; display:flex; align-items:center; justify-content:center; }
+#s06-root .ph .x .ic { width:44px; height:44px; stroke-width:2.6; }
+#s06-root .chk { left:240px; top:1120px; color:var(--yellow); border-color:#6b5a1a; }
+      </style>
+      <div id="s06-root" data-composition-id="s06" data-width="1080" data-height="1920">
+        <div class="stage">
+<div class="tag mono">IT OD ŚRODKA · #10</div>
+<h1 class="hd ttl"><span class="y">Uwaga</span></h1>
+<div class="ph"><div class="sc"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M17 12v4a1 1 0 0 1-1 1h-4" /> <path d="M17 3h2a2 2 0 0 1 2 2v2" /> <path d="M17 8V7" /> <path d="M21 17v2a2 2 0 0 1-2 2h-2" /> <path d="M3 7V5a2 2 0 0 1 2-2h2" /> <path d="M7 17h.01" /> <path d="M7 21H5a2 2 0 0 1-2-2v-2" /> <rect x="7" y="7" width="5" height="5" rx="1" /> </svg> zeskanowano</div>
+<div class="url mono">twoj-bank.pl.<br><span class="r">weryfikacja.xyz</span></div>
+<div class="lab">prawdziwa domena ↑</div>
+<div class="inp mono">hasło: ••••••</div><div class="x"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M18 6 6 18" /> <path d="m6 6 12 12" /> </svg> </div></div>
+<div class="chip chk"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" /> <circle cx="12" cy="12" r="3" /> </svg> sprawdź adres</div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var R = "#s06-root ";
+          var $ = function (s) { return R + s; };
+          var E = "power3.out", IO = "power2.inOut";
+          var tl = gsap.timeline({ paused: true });
+          function count(sel, from, to, t, d, fmt) {
+            var el = document.querySelector(R + sel);
+            var o = { v: from };
+            var f = fmt || function (v) { return Math.round(v).toLocaleString("en-US"); };
+            tl.fromTo(o, { v: from }, { v: to, duration: d, ease: "power2.out", onUpdate: function () { el.textContent = f(o.v); } }, t);
+          }
+          function draw(sel, t, d) {
+            tl.fromTo($(sel), { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: d || 0.5, ease: "power2.out" }, t);
+          }
+          tl.fromTo($(".stage"), { opacity: 0, scale: 1.04 }, { opacity: 1, scale: 1, duration: 0.35, ease: E }, 0);
+          var WX = [0], WY = [0];
+          function WARP(t) { var X = WX, Y = WY, n = X.length; if (t <= X[0]) return t; if (t >= X[n - 1]) return Y[n - 1] + (t - X[n - 1]);
+  for (var i = 1; i < n; i++) if (t <= X[i]) { var k = X[i] === X[i - 1] ? 0 : (t - X[i - 1]) / (X[i] - X[i - 1]); return Y[i - 1] + k * (Y[i] - Y[i - 1]); } return t; }
+          var T = function (g) { return WARP(g) - 31.2; };
+
+tl.fromTo($(".ttl"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(31.4));
+tl.fromTo($(".ph"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(31.7));
+tl.fromTo($(".ph .url"), { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.35, ease: E }, T(32.3));
+tl.fromTo($(".ph .lab"), { opacity: 0 }, { opacity: 1, duration: 0.3 }, T(32.9));
+tl.fromTo($(".ph .inp"), { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.35, ease: E }, T(33.6));
+tl.fromTo($(".ph .x"), { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.3, ease: E }, T(34.2));
+tl.fromTo($(".chk"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(34.85));
+
+          tl.to($(".stage"), { opacity: 0, scale: 0.97, duration: 0.3, ease: "power2.in" }, 4.30);
+          window.__timelines["s06"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

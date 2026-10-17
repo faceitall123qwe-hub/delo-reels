@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pl">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#s06-root { position:absolute; inset:0; }
+#s06-root .stage { position:absolute; inset:0; }
+
+#s06-root .tag { position:absolute; left:0; right:0; top:200px; text-align:center; font-size:44px; color:var(--muted); }
+#s06-root .ttl { position:absolute; left:80px; right:80px; top:290px; text-align:center; font-size:84px; }
+#s06-root .row { position:absolute; left:110px; right:110px; height:120px; display:flex; align-items:center; gap:28px; padding:0 36px; border-radius:30px;
+  background:var(--panel); border:1.5px solid var(--line); font-size:52px; }
+#s06-root .row .ic { width:58px; height:58px; stroke-width:1.7; flex:none; }
+
+#s06-root .srv { position:absolute; left:290px; right:290px; top:470px; height:250px; border-radius:30px; background:var(--panel); border:1.5px solid var(--line);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; color:var(--muted); }
+#s06-root .srv .ic { width:84px; height:84px; stroke-width:1.4; }
+#s06-root .srv .gear { position:absolute; right:36px; top:30px; color:var(--yellow); } #s06-root .srv .gear .ic { width:52px; height:52px; }
+#s06-root .srv .lb { color:var(--text); font-size:42px; }
+#s06-root .v { position:absolute; left:110px; right:110px; height:120px; display:flex; align-items:center; gap:24px; }
+#s06-root .v .ic { width:56px; height:56px; color:var(--muted); stroke-width:1.7; flex:none; }
+#s06-root .v .n { width:230px; font-size:40px; color:var(--muted); }
+#s06-root .v .tr { flex:1; height:28px; border-radius:14px; background:#1b2420; overflow:hidden; }
+#s06-root .v .tr i { display:block; width:100%; height:100%; background:var(--yellow); transform-origin:0 50%; }
+#s06-root .v .z { width:170px; text-align:right; font-size:38px; color:var(--yellow); }
+#s06-root .v0 { top:790px; } #s06-root .v1 { top:920px; } #s06-root .v2 { top:1050px; }
+      </style>
+      <div id="s06-root" data-composition-id="s06" data-width="1080" data-height="1920">
+        <div class="stage">
+<div class="tag mono">IT OD ŚRODKA · #8</div>
+<h1 class="hd ttl"><span class="y">3.</span> Serwer bez cache</h1>
+<div class="srv"><div class="gear"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915" /> <circle cx="12" cy="12" r="3" /> </svg> </div><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="20" height="8" x="2" y="2" rx="2" ry="2" /> <rect width="20" height="8" x="2" y="14" rx="2" ry="2" /> <line x1="6" x2="6.01" y1="6" y2="6" /> <line x1="6" x2="6.01" y1="18" y2="18" /> </svg> <span class="lb">buduje stronę</span></div>
+<div class="v v0"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /> <circle cx="12" cy="7" r="4" /> </svg> <span class="n mono">wejście 1</span><div class="tr"><i></i></div><span class="z mono">od zera</span></div><div class="v v1"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /> <circle cx="12" cy="7" r="4" /> </svg> <span class="n mono">wejście 2</span><div class="tr"><i></i></div><span class="z mono">od zera</span></div><div class="v v2"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /> <circle cx="12" cy="7" r="4" /> </svg> <span class="n mono">wejście 3</span><div class="tr"><i></i></div><span class="z mono">od zera</span></div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var R = "#s06-root ";
+          var $ = function (s) { return R + s; };
+          var E = "power3.out", IO = "power2.inOut";
+          var tl = gsap.timeline({ paused: true });
+          function count(sel, from, to, t, d, fmt) {
+            var el = document.querySelector(R + sel);
+            var o = { v: from };
+            var f = fmt || function (v) { return Math.round(v).toLocaleString("en-US"); };
+            tl.fromTo(o, { v: from }, { v: to, duration: d, ease: "power2.out", onUpdate: function () { el.textContent = f(o.v); } }, t);
+          }
+          function draw(sel, t, d) {
+            tl.fromTo($(sel), { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: d || 0.5, ease: "power2.out" }, t);
+          }
+          tl.fromTo($(".stage"), { opacity: 0, scale: 1.04 }, { opacity: 1, scale: 1, duration: 0.35, ease: E }, 0);
+          var WX = [0], WY = [0];
+          function WARP(t) { var X = WX, Y = WY, n = X.length; if (t <= X[0]) return t; if (t >= X[n - 1]) return Y[n - 1] + (t - X[n - 1]);
+  for (var i = 1; i < n; i++) if (t <= X[i]) { var k = X[i] === X[i - 1] ? 0 : (t - X[i - 1]) / (X[i] - X[i - 1]); return Y[i - 1] + k * (Y[i] - Y[i - 1]); } return t; }
+          var T = function (g) { return WARP(g) - 27.1; };
+
+tl.fromTo($(".ttl"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(27.3));
+tl.fromTo($(".srv"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(28.0));
+tl.to($(".srv .gear"), { rotate: 540, duration: 3.6, ease: "none" }, T(28.2));
+tl.fromTo($(".v0"), { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.3, ease: E }, T(29.3));
+tl.fromTo($(".v0 .tr i"), { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "none" }, T(29.400000000000002));
+tl.fromTo($(".v0 .z"), { opacity: 0 }, { opacity: 1, duration: 0.2 }, T(30));
+tl.fromTo($(".v1"), { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.3, ease: E }, T(29.95));
+tl.fromTo($(".v1 .tr i"), { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "none" }, T(30.05));
+tl.fromTo($(".v1 .z"), { opacity: 0 }, { opacity: 1, duration: 0.2 }, T(30.65));
+tl.fromTo($(".v2"), { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.3, ease: E }, T(30.6));
+tl.fromTo($(".v2 .tr i"), { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "none" }, T(30.700000000000003));
+tl.fromTo($(".v2 .z"), { opacity: 0 }, { opacity: 1, duration: 0.2 }, T(31.3));
+
+          tl.to($(".stage"), { opacity: 0, scale: 0.97, duration: 0.3, ease: "power2.in" }, 4.20);
+          window.__timelines["s06"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

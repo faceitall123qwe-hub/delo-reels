@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pl">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#s01-root { position:absolute; inset:0; }
+#s01-root .stage { position:absolute; inset:0; }
+
+#s01-root .tag { position:absolute; left:0; right:0; top:200px; text-align:center; font-size:44px; color:var(--muted); }
+#s01-root .ttl { position:absolute; left:80px; right:80px; top:290px; text-align:center; font-size:84px; }
+#s01-root .row { position:absolute; left:110px; right:110px; height:120px; display:flex; align-items:center; gap:28px; padding:0 36px; border-radius:30px;
+  background:var(--panel); border:1.5px solid var(--line); font-size:52px; }
+#s01-root .row .ic { width:58px; height:58px; stroke-width:1.7; flex:none; }
+
+#s01-root .q { position:absolute; left:80px; right:80px; top:300px; text-align:center; font-size:92px; }
+#s01-root .br { position:absolute; left:120px; right:120px; top:580px; height:460px; border-radius:36px; background:#0e1311; border:1.5px solid var(--line); overflow:hidden; }
+#s01-root .br .bar { height:84px; display:flex; align-items:center; gap:14px; padding:0 30px; border-bottom:1.5px solid var(--line); }
+#s01-root .br .bar i { width:18px; height:18px; border-radius:50%; background:#2b3632; display:block; flex:none; }
+#s01-root .br .url { margin-left:14px; flex:1; height:50px; border-radius:25px; background:var(--panel); display:flex; align-items:center; padding:0 24px; font-size:32px; color:var(--muted); }
+#s01-root .br .prog { position:absolute; left:0; top:84px; height:6px; width:100%; background:var(--yellow); transform-origin:0 50%; }
+#s01-root .br .mid { position:absolute; left:0; right:0; top:90px; bottom:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; }
+#s01-root .spin { color:var(--muted); } #s01-root .spin .ic { width:84px; height:84px; stroke-width:1.8; }
+#s01-root .tm { font-size:130px; font-weight:700; color:var(--yellow); }
+#s01-root .us { position:absolute; left:0; right:0; top:1085px; display:flex; justify-content:center; gap:30px; }
+#s01-root .us .ic { width:70px; height:70px; color:var(--muted); stroke-width:1.8; }
+#s01-root .lose { position:absolute; left:0; right:0; top:1190px; text-align:center; font-size:66px; font-weight:700; letter-spacing:-0.02em; }
+      </style>
+      <div id="s01-root" data-composition-id="s01" data-width="1080" data-height="1920">
+        <div class="stage">
+<div class="tag mono">IT OD ŚRODKA · #8</div>
+<h1 class="hd q">Strona ładuje się <span class="y" style="white-space:nowrap">5 sekund?</span></h1>
+<div class="br"><div class="bar"><i></i><i></i><i></i><div class="url mono">twojafirma.pl</div></div><div class="prog"></div>
+<div class="mid"><div class="spin"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M12 2v4" /> <path d="m16.2 7.8 2.9-2.9" /> <path d="M18 12h4" /> <path d="m16.2 16.2 2.9 2.9" /> <path d="M12 18v4" /> <path d="m4.9 19.1 2.9-2.9" /> <path d="M2 12h4" /> <path d="m4.9 4.9 2.9 2.9" /> </svg> </div><div class="tm mono">0,0 s</div></div></div>
+<div class="us"><span class="u"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /> <circle cx="12" cy="7" r="4" /> </svg> </span><span class="u"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /> <circle cx="12" cy="7" r="4" /> </svg> </span><span class="u"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /> <circle cx="12" cy="7" r="4" /> </svg> </span></div>
+<div class="lose">tracisz <span class="y">klientów</span></div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var R = "#s01-root ";
+          var $ = function (s) { return R + s; };
+          var E = "power3.out", IO = "power2.inOut";
+          var tl = gsap.timeline({ paused: true });
+          function count(sel, from, to, t, d, fmt) {
+            var el = document.querySelector(R + sel);
+            var o = { v: from };
+            var f = fmt || function (v) { return Math.round(v).toLocaleString("en-US"); };
+            tl.fromTo(o, { v: from }, { v: to, duration: d, ease: "power2.out", onUpdate: function () { el.textContent = f(o.v); } }, t);
+          }
+          function draw(sel, t, d) {
+            tl.fromTo($(sel), { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: d || 0.5, ease: "power2.out" }, t);
+          }
+          tl.fromTo($(".stage"), { opacity: 0, scale: 1.04 }, { opacity: 1, scale: 1, duration: 0.35, ease: E }, 0);
+          var WX = [0], WY = [0];
+          function WARP(t) { var X = WX, Y = WY, n = X.length; if (t <= X[0]) return t; if (t >= X[n - 1]) return Y[n - 1] + (t - X[n - 1]);
+  for (var i = 1; i < n; i++) if (t <= X[i]) { var k = X[i] === X[i - 1] ? 0 : (t - X[i - 1]) / (X[i] - X[i - 1]); return Y[i - 1] + k * (Y[i] - Y[i - 1]); } return t; }
+          var T = function (g) { return WARP(g) - 0; };
+
+tl.fromTo($(".tag"), { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0);
+tl.fromTo($(".q"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, 0.05);
+tl.fromTo($(".br"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, 0.2);
+tl.to($(".spin"), { rotate: 900, duration: 3.6, ease: "none" }, 0.2);
+tl.fromTo($(".br .prog"), { scaleX: 0 }, { scaleX: 0.62, duration: 3.4, ease: "power1.out" }, 0.3);
+count(".tm", 0, 5, 0.4, 1.5, function (v) { return v.toFixed(1).replace(".", ",") + " s"; });
+tl.fromTo($(".us .u"), { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.3, ease: E, stagger: 0.08 }, T(2.45));
+tl.fromTo($(".lose"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(2.6));
+tl.to($(".us .u"), { x: 420, opacity: 0, duration: 0.55, ease: "power2.in", stagger: 0.1 }, T(3.1));
+
+          tl.to($(".stage"), { opacity: 0, scale: 0.97, duration: 0.3, ease: "power2.in" }, 3.55);
+          window.__timelines["s01"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

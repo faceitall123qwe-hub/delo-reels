@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pl">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#s04-root { position:absolute; inset:0; }
+#s04-root .stage { position:absolute; inset:0; }
+
+#s04-root .tag { position:absolute; left:0; right:0; top:200px; text-align:center; font-size:44px; color:var(--muted); }
+#s04-root .ttl { position:absolute; left:80px; right:80px; top:290px; text-align:center; font-size:84px; }
+#s04-root .nd { position:absolute; width:250px; height:230px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; color:var(--muted); }
+#s04-root .nd > .ic { width:84px; height:84px; stroke-width:1.4; }
+#s04-root .nd .lb { color:var(--text); font-size:46px; }
+#s04-root .blik { display:inline-flex; align-items:center; justify-content:center; padding:6px 20px; border-radius:14px; background:#e9efeb; color:#0b0e0d; font-weight:700; letter-spacing:0.02em; }
+#s04-root .row { position:absolute; left:120px; right:120px; height:140px; display:flex; align-items:center; gap:30px; padding:0 40px; border-radius:30px; background:var(--panel); border:1.5px solid var(--line); font-size:52px; }
+#s04-root .row .ic { width:60px; height:60px; stroke-width:1.6; flex:none; }
+#s04-root .ch { display:none; }
+
+#s04-root .ph { position:absolute; left:200px; top:330px; width:680px; height:980px; border-radius:64px; background:#0e1311; border:3px solid var(--line); }
+#s04-root .nt { position:absolute; left:40px; right:40px; top:60px; padding:30px 34px; border-radius:30px; background:var(--panel); border:1.5px solid rgba(62,224,143,.5); }
+#s04-root .nt .h { display:flex; align-items:center; gap:16px; font-size:40px; color:var(--muted); margin-bottom:14px; }
+#s04-root .nt .h .ic { width:44px; height:44px; color:var(--green); }
+#s04-root .nt .b { font-size:50px; font-weight:600; }
+#s04-root .det { position:absolute; left:40px; right:40px; top:330px; display:flex; flex-direction:column; gap:18px; }
+#s04-root .det div { display:flex; justify-content:space-between; font-size:48px; padding:18px 30px; border-radius:20px; background:var(--panel); }
+#s04-root .det .k { color:var(--muted); }
+#s04-root .pin { position:absolute; left:0; right:0; top:640px; display:flex; justify-content:center; gap:30px; }
+#s04-root .pin i { display:block; width:46px; height:46px; border-radius:50%; border:3px solid var(--line); }
+#s04-root .pl { position:absolute; left:0; right:0; top:730px; text-align:center; font-size:44px; color:var(--muted); }
+      </style>
+      <div id="s04-root" data-composition-id="s04" data-width="1080" data-height="1920">
+        <div class="stage">
+<div class="tag mono">IT OD ŚRODKA · #4</div>
+<div class="ph">
+  <div class="nt"><div class="h"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M10.268 21a2 2 0 0 0 3.464 0" /> <path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" /> </svg> <span>twój bank · teraz</span></div><div class="b">Potwierdź płatność BLIK</div></div>
+  <div class="det"><div class="d0"><span class="k">kwota</span><span class="mono">129,99 zł</span></div><div class="d1"><span class="k">sklep</span><span class="mono">sklep.pl</span></div></div>
+  <div class="pin"><i></i><i></i><i></i><i></i></div>
+  <div class="pl">PIN</div>
+</div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var R = "#s04-root ";
+          var $ = function (s) { return R + s; };
+          var E = "power3.out", IO = "power2.inOut";
+          var tl = gsap.timeline({ paused: true });
+          function count(sel, from, to, t, d, fmt) {
+            var el = document.querySelector(R + sel);
+            var o = { v: from };
+            var f = fmt || function (v) { return Math.round(v).toLocaleString("en-US"); };
+            tl.fromTo(o, { v: from }, { v: to, duration: d, ease: "power2.out", onUpdate: function () { el.textContent = f(o.v); } }, t);
+          }
+          function draw(sel, t, d) {
+            tl.fromTo($(sel), { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: d || 0.5, ease: "power2.out" }, t);
+          }
+          tl.fromTo($(".stage"), { opacity: 0, scale: 1.04 }, { opacity: 1, scale: 1, duration: 0.35, ease: E }, 0);
+          var WX = [0,0.3,0.766,1.311,1.357,1.811,3.073,3.63,3.993,4.414,4.516,4.652,4.993,5.255,6.391,6.675,6.834,7.095,7.243,7.289,7.482,7.789,8.868,9.13,9.641,10.277,10.686,11.618,11.97,12.743,12.88,13.266,13.573,13.811,14.709,15.164,15.55,15.857,15.97,16.357,16.482,16.925,17.709,18.266,18.811,19.084,19.414,19.982,20.186,20.902,20.993,21.289,21.675,21.868,22.652,23.141,23.539,24.175,24.289,24.516,25.516,26.095,26.482,26.584,27.391,27.482,28.118,29.084,29.448,30.357,30.493,30.675,31.55,31.675,32.652,33.573,33.948,34.482,34.595,34.698,35.232,35.345,35.902,36.118,37.164,37.607,37.732,38.232,38.436,38.777,39.641,39.868,40.198,40.618,41.459,41.618,42.118,42.391,42.902,43.459,43.595,44.425,44.516,45.277,45.436,45.63,46.016,46.448,46.834,47.13,47.539,47.868,48.232,48.573,48.88,48.982,49.232,49.72,50.527,50.698,51.016,51.357,51.857,52.345,53.243,54.005,54.141,54.72,54.868,55.22,55.72,55.777,56.152,57.148,57.716,57.864], WY = [0,0.298,0.711,1.32,1.385,1.744,2.794,3.304,3.62,4.011,4.131,4.25,4.5,4.685,5.593,5.832,5.963,6.18,6.311,6.343,6.517,6.789,7.73,7.98,8.404,8.893,9.23,10.018,10.301,10.986,11.094,11.399,11.627,11.823,12.568,12.992,13.372,13.611,13.753,14.057,14.155,14.535,15.161,15.628,16.064,16.314,16.585,17.096,17.259,17.694,17.792,18.021,18.336,18.477,19.081,19.483,19.82,20.364,20.461,20.646,21.457,21.957,22.294,22.38,22.935,23.033,23.522,24.354,24.68,25.377,25.496,25.637,26.312,26.42,27.149,27.905,28.231,28.71,28.797,28.884,29.351,29.46,29.916,30.068,30.966,31.346,31.444,31.835,31.998,32.292,32.89,33.097,33.357,33.694,34.418,34.581,35.027,35.255,35.744,36.2,36.309,36.962,37.049,37.664,37.794,37.946,38.24,38.609,38.935,39.207,39.74,40.022,40.37,40.664,40.914,41.011,41.218,41.609,42.224,42.365,42.604,42.898,43.311,43.724,44.48,45.1,45.197,45.687,45.817,46.165,46.654,46.697,47.024,47.856,48.345,48.454];
+          function WARP(t) { var X = WX, Y = WY, n = X.length; if (t <= X[0]) return t; if (t >= X[n - 1]) return Y[n - 1] + (t - X[n - 1]);
+  for (var i = 1; i < n; i++) if (t <= X[i]) { var k = X[i] === X[i - 1] ? 0 : (t - X[i - 1]) / (X[i] - X[i - 1]); return Y[i - 1] + k * (Y[i] - Y[i - 1]); } return t; }
+          var T = function (g) { return WARP(g) - 18.96; };
+
+tl.fromTo($(".ph"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(22.6));
+tl.fromTo($(".nt"), { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(23.5));
+tl.fromTo($(".d0"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(26.0));
+tl.fromTo($(".d1"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(26.5));
+tl.fromTo([$(".pin"), $(".pl")], { opacity: 0 }, { opacity: 1, duration: 0.3 }, T(27.3));
+tl.to($(".pin i"), { backgroundColor: "#3ee08f", borderColor: "#3ee08f", duration: 0.08, stagger: 0.08 }, T(27.6));
+
+          tl.to($(".stage"), { opacity: 0, scale: 0.97, duration: 0.3, ease: "power2.in" }, 5.02);
+          window.__timelines["s04"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

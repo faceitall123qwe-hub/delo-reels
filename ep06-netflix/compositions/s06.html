@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pl">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#s06-root { position:absolute; inset:0; }
+#s06-root .stage { position:absolute; inset:0; }
+
+#s06-root .tag { position:absolute; left:0; right:0; top:200px; text-align:center; font-size:44px; color:var(--muted); }
+#s06-root .ttl { position:absolute; left:80px; right:80px; top:290px; text-align:center; font-size:84px; }
+#s06-root .num { color:var(--yellow); }
+#s06-root .nd { position:absolute; width:300px; height:200px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; color:var(--muted); }
+#s06-root .nd > .ic { width:76px; height:76px; stroke-width:1.4; }
+#s06-root .nd .lb { color:var(--text); font-size:46px; }
+
+#s06-root .vid { position:absolute; left:120px; right:120px; top:420px; height:420px; border-radius:26px; overflow:hidden; background:#0e1311; border:1.5px solid var(--line); }
+#s06-root .vid .frame { position:absolute; inset:20px; border-radius:16px; background:linear-gradient(135deg, #1d4a39, #12281f 50%, #3a3818); }
+#s06-root .vid .ob { position:absolute; left:120px; top:110px; width:180px; height:180px; border-radius:50%; background:#3ee08f; opacity:.75; }
+#s06-root .vid .ob2 { position:absolute; right:140px; top:150px; width:260px; height:120px; border-radius:24px; background:#f5c518; opacity:.6; }
+#s06-root .tl { position:absolute; left:120px; right:120px; top:920px; height:24px; border-radius:12px; background:var(--line); }
+#s06-root .tl .bf { position:absolute; left:0; top:0; bottom:0; width:62%; border-radius:12px; background:#4a5751; }
+#s06-root .tl .pl { position:absolute; left:0; top:0; bottom:0; width:38%; border-radius:12px; background:var(--green); }
+#s06-root .tl .hd2 { position:absolute; left:38%; top:-14px; width:52px; height:52px; margin-left:-26px; border-radius:50%; background:var(--text); }
+#s06-root .bl { position:absolute; left:0; right:0; top:980px; display:flex; justify-content:center; gap:40px; font-size:44px; }
+#s06-root .cap { position:absolute; left:80px; right:80px; top:1120px; text-align:center; font-size:56px; font-weight:600; }
+      </style>
+      <div id="s06-root" data-composition-id="s06" data-width="1080" data-height="1920">
+        <div class="stage">
+<div class="tag mono">IT OD ŚRODKA · #6</div>
+<h1 class="hd ttl">Zapas: <span class="g">bufor</span></h1>
+<div class="vid"><div class="frame"><div class="ob"></div><div class="ob2"></div></div></div>
+<div class="tl"><div class="bf"></div><div class="pl"></div><div class="hd2"></div></div>
+<div class="bl"><span class="g">oglądasz</span><span class="muted">pobrane ≈ 15 s do przodu</span></div>
+<div class="cap">czasem <span class="y">rozmyte</span>, prawie nigdy <span class="g">nie stoi</span></div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var R = "#s06-root ";
+          var $ = function (s) { return R + s; };
+          var E = "power3.out", IO = "power2.inOut";
+          var tl = gsap.timeline({ paused: true });
+          function count(sel, from, to, t, d, fmt) {
+            var el = document.querySelector(R + sel);
+            var o = { v: from };
+            var f = fmt || function (v) { return Math.round(v).toLocaleString("en-US"); };
+            tl.fromTo(o, { v: from }, { v: to, duration: d, ease: "power2.out", onUpdate: function () { el.textContent = f(o.v); } }, t);
+          }
+          function draw(sel, t, d) {
+            tl.fromTo($(sel), { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: d || 0.5, ease: "power2.out" }, t);
+          }
+          tl.fromTo($(".stage"), { opacity: 0, scale: 1.04 }, { opacity: 1, scale: 1, duration: 0.35, ease: E }, 0);
+          var WX = [0], WY = [0];
+          function WARP(t) { var X = WX, Y = WY, n = X.length; if (t <= X[0]) return t; if (t >= X[n - 1]) return Y[n - 1] + (t - X[n - 1]);
+  for (var i = 1; i < n; i++) if (t <= X[i]) { var k = X[i] === X[i - 1] ? 0 : (t - X[i - 1]) / (X[i] - X[i - 1]); return Y[i - 1] + k * (Y[i] - Y[i - 1]); } return t; }
+          var T = function (g) { return WARP(g) - 33.8; };
+
+tl.fromTo($(".ttl"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(34.0));
+tl.fromTo($(".vid"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(34.3));
+tl.fromTo($(".tl"), { opacity: 0 }, { opacity: 1, duration: 0.3 }, T(34.6));
+tl.fromTo($(".tl .bf"), { scaleX: 0.6, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.9, ease: E }, T(35.5));
+tl.fromTo($(".bl"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(36.2));
+tl.to($(".vid .frame"), { filter: "blur(14px)", duration: 0.3 }, T(39.3));
+tl.to($(".vid .frame"), { filter: "blur(0px)", duration: 0.6 }, T(40.1));
+tl.fromTo($(".cap"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(39.6));
+
+          tl.to($(".stage"), { opacity: 0, scale: 0.97, duration: 0.3, ease: "power2.in" }, 7.30);
+          window.__timelines["s06"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

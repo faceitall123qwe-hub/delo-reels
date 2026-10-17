@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pl">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#s07-root { position:absolute; inset:0; }
+#s07-root .stage { position:absolute; inset:0; }
+
+#s07-root .tag { position:absolute; left:0; right:0; top:200px; text-align:center; font-size:44px; color:var(--muted); }
+#s07-root .ttl { position:absolute; left:80px; right:80px; top:290px; text-align:center; font-size:84px; }
+#s07-root .row { position:absolute; left:110px; right:110px; height:130px; display:flex; align-items:center; gap:28px; padding:0 36px; border-radius:30px;
+  background:var(--panel); border:1.5px solid var(--line); font-size:50px; }
+#s07-root .row .ic { width:60px; height:60px; stroke-width:1.7; flex:none; }
+#s07-root .row .st { margin-left:auto; display:flex; } #s07-root .row .st .ic { width:56px; height:56px; stroke-width:2.4; }
+#s07-root .sms { position:absolute; left:110px; right:110px; height:150px; border-radius:34px; background:#1a2220; border:1.5px solid #2f3d37;
+  display:flex; align-items:center; gap:26px; padding:0 34px; box-shadow:0 20px 50px rgba(0,0,0,.45); }
+#s07-root .sms .ap { width:84px; height:84px; border-radius:22px; background:var(--green); color:#0b0e0d; display:flex; align-items:center; justify-content:center; flex:none; }
+#s07-root .sms .ap .ic { width:50px; height:50px; stroke-width:2; }
+#s07-root .sms .tx { display:flex; flex-direction:column; gap:6px; }
+#s07-root .sms .fr { font-size:34px; color:var(--muted); } #s07-root .sms .bd { font-size:46px; }
+#s07-root .sms .bd b { color:var(--yellow); font-weight:700; }
+
+#s07-root .rule { position:absolute; left:80px; right:80px; top:470px; text-align:center; font-size:96px; line-height:1.05; }
+#s07-root .s1 { top:750px; height:180px; }
+#s07-root .s1 .bd { font-size:40px; }
+#s07-root .bk { top:1000px; border-color:#2b5a45; } #s07-root .bk .ic { color:var(--green); }
+      </style>
+      <div id="s07-root" data-composition-id="s07" data-width="1080" data-height="1920">
+        <div class="stage">
+<div class="tag mono">IT OD ŚRODKA · #11</div>
+<h1 class="hd ttl">Najważniejsze</h1>
+<div class="hd rule"><span class="y">Nikomu</span><br>nie podawaj kodu</div>
+<div class="sms s1"><div class="ap"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z" /> </svg> </div><div class="tx"><span class="fr">SMS · teraz</span><span class="bd">Kod: <b class="mono">482 913</b>. Nie podawaj go nikomu.</span></div></div>
+<div class="row bk"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M10 18v-7" /> <path d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z" /> <path d="M14 18v-7" /> <path d="M18 18v-7" /> <path d="M3 22h18" /> <path d="M6 18v-7" /> </svg> <span>bank nigdy o niego nie zapyta</span></div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var R = "#s07-root ";
+          var $ = function (s) { return R + s; };
+          var E = "power3.out", IO = "power2.inOut";
+          var tl = gsap.timeline({ paused: true });
+          function count(sel, from, to, t, d, fmt) {
+            var el = document.querySelector(R + sel);
+            var o = { v: from };
+            var f = fmt || function (v) { return Math.round(v).toLocaleString("en-US"); };
+            tl.fromTo(o, { v: from }, { v: to, duration: d, ease: "power2.out", onUpdate: function () { el.textContent = f(o.v); } }, t);
+          }
+          function draw(sel, t, d) {
+            tl.fromTo($(sel), { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: d || 0.5, ease: "power2.out" }, t);
+          }
+          tl.fromTo($(".stage"), { opacity: 0, scale: 1.04 }, { opacity: 1, scale: 1, duration: 0.35, ease: E }, 0);
+          var WX = [0], WY = [0];
+          function WARP(t) { var X = WX, Y = WY, n = X.length; if (t <= X[0]) return t; if (t >= X[n - 1]) return Y[n - 1] + (t - X[n - 1]);
+  for (var i = 1; i < n; i++) if (t <= X[i]) { var k = X[i] === X[i - 1] ? 0 : (t - X[i - 1]) / (X[i] - X[i - 1]); return Y[i - 1] + k * (Y[i] - Y[i - 1]); } return t; }
+          var T = function (g) { return WARP(g) - 31.3; };
+
+tl.fromTo($(".ttl"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(31.45));
+tl.fromTo($(".rule"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(32.45));
+tl.fromTo($(".s1"), { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(33.0));
+tl.fromTo($(".bk"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(34.0));
+
+          tl.to($(".stage"), { opacity: 0, scale: 0.97, duration: 0.3, ease: "power2.in" }, 4.10);
+          window.__timelines["s07"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

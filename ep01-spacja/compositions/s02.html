@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pl">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#s02-root { position:absolute; inset:0; }
+#s02-root .stage { position:absolute; inset:0; }
+
+#s02-root .tag { position:absolute; left:0; right:0; top:200px; text-align:center; font-size:44px; color:var(--muted); }
+#s02-root .ttl { position:absolute; left:80px; right:80px; top:290px; text-align:center; font-size:84px; }
+#s02-root .nd { position:absolute; width:250px; height:230px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; color:var(--muted); }
+#s02-root .nd > .ic { width:84px; height:84px; stroke-width:1.4; }
+#s02-root .nd .lb { color:var(--text); font-size:46px; }
+#s02-root .avatar { position:absolute; width:90px; height:90px; border-radius:22px; background:var(--green); }
+
+#s02-root .k { left:120px; top:640px; } #s02-root .pc { left:710px; top:640px; }
+#s02-root .wire path { stroke:var(--green); stroke-width:4; }
+#s02-root .pk { position:absolute; left:380px; top:741px; width:28px; height:28px; border-radius:50%; background:var(--yellow); }
+#s02-root .usb { position:absolute; left:380px; top:640px; width:320px; text-align:center; font-size:52px; color:var(--green); }
+#s02-root .hz { position:absolute; left:0; right:0; top:990px; text-align:center; font-size:150px; color:var(--yellow); }
+#s02-root .ms { position:absolute; left:0; right:0; top:1180px; text-align:center; font-size:52px; color:var(--muted); }
+      </style>
+      <div id="s02-root" data-composition-id="s02" data-width="1080" data-height="1920">
+        <div class="stage">
+<div class="tag mono">IT OD ŚRODKA · #1</div>
+<h1 class="hd ttl">Klawiatura <span class="g">→</span> komputer</h1>
+<svg class="wire" viewBox="0 0 1080 1920"><path class="ln" pathLength="1" d="M370 755 L710 755"/></svg>
+<div class="card nd k"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M10 8h.01" /> <path d="M12 12h.01" /> <path d="M14 8h.01" /> <path d="M16 12h.01" /> <path d="M18 8h.01" /> <path d="M6 8h.01" /> <path d="M7 16h10" /> <path d="M8 12h.01" /> <rect width="20" height="16" x="2" y="4" rx="2" /> </svg> <span class="lb">klawiatura</span></div>
+<div class="card nd pc"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M12 20v2" /> <path d="M12 2v2" /> <path d="M17 20v2" /> <path d="M17 2v2" /> <path d="M2 12h2" /> <path d="M2 17h2" /> <path d="M2 7h2" /> <path d="M20 12h2" /> <path d="M20 17h2" /> <path d="M20 7h2" /> <path d="M7 20v2" /> <path d="M7 2v2" /> <rect x="4" y="4" width="16" height="16" rx="2" /> <rect x="8" y="8" width="8" height="8" rx="1" /> </svg> <span class="lb">komputer</span></div>
+<div class="usb mono">USB</div>
+<div class="pk p0"></div><div class="pk p1"></div><div class="pk p2"></div>
+<div class="hz mono">1000×/s</div>
+<div class="ms">sprawdzanie klawiszy co 1 ms</div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var R = "#s02-root ";
+          var $ = function (s) { return R + s; };
+          var E = "power3.out", IO = "power2.inOut";
+          var tl = gsap.timeline({ paused: true });
+          function count(sel, from, to, t, d, fmt) {
+            var el = document.querySelector(R + sel);
+            var o = { v: from };
+            var f = fmt || function (v) { return Math.round(v).toLocaleString("en-US"); };
+            tl.fromTo(o, { v: from }, { v: to, duration: d, ease: "power2.out", onUpdate: function () { el.textContent = f(o.v); } }, t);
+          }
+          function draw(sel, t, d) {
+            tl.fromTo($(sel), { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: d || 0.5, ease: "power2.out" }, t);
+          }
+          tl.fromTo($(".stage"), { opacity: 0, scale: 1.04 }, { opacity: 1, scale: 1, duration: 0.35, ease: E }, 0);
+          var WX = [0,0.35,0.707,1.064,1.109,1.5,1.567,1.801,2.147,3.481,3.682,3.726,3.894,4.195,4.608,4.798,4.898,5.255,6.483,6.985,7.253,7.8,7.845,8.113,8.179,8.425,8.57,8.693,8.804,8.883,9.697,9.921,10.211,10.434,10.501,11.851,12.097,12.197,12.398,12.733,12.956,13.023,13.659,13.916,14.24,14.653,16.014,16.137,16.304,16.595,18.101,18.202,18.336,18.637,18.838,19.005,19.429,19.496,19.586,19.842,20.11,20.278,20.735,20.836,21.193,22.32,22.677,23.481,23.57,23.793,23.927,24.351,24.407,24.485,24.563,25.367,25.423,25.624,26.36,26.427,26.729,27.164,27.432,27.621,27.688,28.99,29.258,29.526,29.693,29.939,30.106,30.196,30.53,30.999,31.044,31.289,31.524,31.78,32.372,32.472,33.905,34.162,34.262,34.552,34.787,35.099,35.624,37.142,37.554,37.7,38.157,39.441,39.697,40.032,40.367,40.445,40.557,41.014,41.26,41.394,42.644,43.023,43.782,44.251,44.362,45.992,46.528,46.639], WY = [0,0.298,0.701,1.038,1.092,1.44,1.548,1.788,2.114,2.881,3.087,3.131,3.315,3.609,4.065,4.283,4.391,4.783,5.452,5.984,6.289,6.93,7.028,7.332,7.419,7.68,7.843,8.006,8.137,8.224,8.941,9.224,9.528,9.757,9.844,10.643,10.915,11.045,11.295,11.697,11.937,12.002,12.546,12.85,13.165,13.567,14.432,14.584,14.737,14.997,15.927,16.025,16.188,16.504,16.732,16.927,17.351,17.482,17.623,17.83,18.08,18.286,18.699,18.808,19.177,19.727,20.14,20.836,20.967,21.173,21.336,21.804,21.912,22.021,22.119,22.826,22.924,23.119,23.728,23.848,24.163,24.576,24.826,25.033,25.109,25.876,26.202,26.506,26.724,26.963,27.126,27.234,27.626,28.137,28.234,28.506,28.756,29.039,29.604,29.746,30.621,30.904,31.024,31.295,31.6,31.937,32.524,33.464,33.943,34.117,34.638,35.373,35.666,36.025,36.416,36.525,36.634,37.167,37.438,37.569,38.194,38.575,39.315,39.815,39.978,41.136,41.625,41.734];
+          function WARP(t) { var X = WX, Y = WY, n = X.length; if (t <= X[0]) return t; if (t >= X[n - 1]) return Y[n - 1] + (t - X[n - 1]);
+  for (var i = 1; i < n; i++) if (t <= X[i]) { var k = X[i] === X[i - 1] ? 0 : (t - X[i - 1]) / (X[i] - X[i - 1]); return Y[i - 1] + k * (Y[i] - Y[i - 1]); } return t; }
+          var T = function (g) { return WARP(g) - 5.3; };
+
+tl.fromTo($(".ttl"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(6.3));
+tl.fromTo($(".k"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(6.5));
+tl.fromTo($(".pc"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(6.7));
+draw(".ln", T(8.1), 0.5);
+tl.fromTo($(".usb"), { opacity: 0 }, { opacity: 1, duration: 0.3 }, T(8.4));
+tl.fromTo($(".p0"), { opacity: 1, x: 0 }, { x: 300, duration: 0.5, ease: "none" }, T(8.6) + 0 * 0.25); tl.set($(".p0"), { opacity: 0 }, T(9.1) + 0 * 0.25);
+tl.fromTo($(".p1"), { opacity: 1, x: 0 }, { x: 300, duration: 0.5, ease: "none" }, T(8.6) + 1 * 0.25); tl.set($(".p1"), { opacity: 0 }, T(9.1) + 1 * 0.25);
+tl.fromTo($(".p2"), { opacity: 1, x: 0 }, { x: 300, duration: 0.5, ease: "none" }, T(8.6) + 2 * 0.25); tl.set($(".p2"), { opacity: 0 }, T(9.1) + 2 * 0.25);
+tl.fromTo($(".hz"), { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.45, ease: E }, T(9.85));
+tl.fromTo($(".ms"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(10.4));
+
+          tl.to($(".stage"), { opacity: 0, scale: 0.97, duration: 0.3, ease: "power2.in" }, 4.95);
+          window.__timelines["s02"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

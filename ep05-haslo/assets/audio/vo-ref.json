@@ -1,0 +1,1792 @@
+{
+  "Metadata": [
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 847500,
+        "Duration": 5190830,
+        "text": {
+          "Text": "Strona",
+          "Length": 6,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 9004160,
+        "Duration": 1377080,
+        "text": {
+          "Text": "na",
+          "Length": 2,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 10381250,
+        "Duration": 2330410,
+        "text": {
+          "Text": "której",
+          "Length": 6,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 12817910,
+        "Duration": 1165000,
+        "text": {
+          "Text": "się",
+          "Length": 3,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 13982910,
+        "Duration": 5402500,
+        "text": {
+          "Text": "logujesz",
+          "Length": 8,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 21398330,
+        "Duration": 2118750,
+        "text": {
+          "Text": "nie",
+          "Length": 3,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 23517080,
+        "Duration": 1906660,
+        "text": {
+          "Text": "zna",
+          "Length": 3,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 25423750,
+        "Duration": 3390000,
+        "text": {
+          "Text": "twojego",
+          "Length": 7,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 28813750,
+        "Duration": 5084580,
+        "text": {
+          "Text": "hasła",
+          "Length": 5,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 37394160,
+        "Duration": 317910,
+        "text": {
+          "Text": "I",
+          "Length": 1,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 37817910,
+        "Duration": 3707500,
+        "text": {
+          "Text": "bardzo",
+          "Length": 6,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 41525410,
+        "Duration": 4555000,
+        "text": {
+          "Text": "dobrze",
+          "Length": 6,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 49470410,
+        "Duration": 4343330,
+        "text": {
+          "Text": "Zobacz",
+          "Length": 6,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 55720410,
+        "Duration": 2118750,
+        "text": {
+          "Text": "jak",
+          "Length": 3,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 57839160,
+        "Duration": 1059160,
+        "text": {
+          "Text": "to",
+          "Length": 2,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 58898330,
+        "Duration": 4555000,
+        "text": {
+          "Text": "działa",
+          "Length": 6,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 66631250,
+        "Duration": 1695000,
+        "text": {
+          "Text": "Kiedy",
+          "Length": 5,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 68326250,
+        "Duration": 4555000,
+        "text": {
+          "Text": "zakładasz",
+          "Length": 9,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 72987080,
+        "Duration": 4449160,
+        "text": {
+          "Text": "konto",
+          "Length": 5,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 79978750,
+        "Duration": 3390000,
+        "text": {
+          "Text": "strona",
+          "Length": 6,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 83368750,
+        "Duration": 1165000,
+        "text": {
+          "Text": "nie",
+          "Length": 3,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 84533750,
+        "Duration": 4555000,
+        "text": {
+          "Text": "zapisuje",
+          "Length": 8,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 89089160,
+        "Duration": 5720410,
+        "text": {
+          "Text": "hasła",
+          "Length": 5,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 98199160,
+        "Duration": 4131250,
+        "text": {
+          "Text": "Przepuszcza",
+          "Length": 11,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 102330410,
+        "Duration": 953330,
+        "text": {
+          "Text": "je",
+          "Length": 2,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 103283750,
+        "Duration": 1906660,
+        "text": {
+          "Text": "przez",
+          "Length": 5,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 105190830,
+        "Duration": 3813330,
+        "text": {
+          "Text": "funkcję",
+          "Length": 7,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 109004160,
+        "Duration": 5614580,
+        "text": {
+          "Text": "skrótu",
+          "Length": 6,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 116525410,
+        "Duration": 2860000,
+        "text": {
+          "Text": "czyli",
+          "Length": 5,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 119491660,
+        "Duration": 5508330,
+        "text": {
+          "Text": "hasz",
+          "Length": 4,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 128390000,
+        "Duration": 635410,
+        "text": {
+          "Text": "Z",
+          "Length": 1,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 129025410,
+        "Duration": 3707500,
+        "text": {
+          "Text": "hasła",
+          "Length": 5,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 132732910,
+        "Duration": 2330410,
+        "text": {
+          "Text": "kot",
+          "Length": 3,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 135169580,
+        "Duration": 3283750,
+        "text": {
+          "Text": "jeden",
+          "Length": 5,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 138453330,
+        "Duration": 3177910,
+        "text": {
+          "Text": "dwa",
+          "Length": 3,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 141631250,
+        "Duration": 4131250,
+        "text": {
+          "Text": "trzy",
+          "Length": 4,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 145868750,
+        "Duration": 2012910,
+        "text": {
+          "Text": "robi",
+          "Length": 4,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 147987080,
+        "Duration": 1271250,
+        "text": {
+          "Text": "się",
+          "Length": 3,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 149364580,
+        "Duration": 4131250,
+        "text": {
+          "Text": "długi",
+          "Length": 5,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 153495830,
+        "Duration": 2860000,
+        "text": {
+          "Text": "ciąg",
+          "Length": 4,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 156355830,
+        "Duration": 5932080,
+        "text": {
+          "Text": "znaków",
+          "Length": 6,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 164089160,
+        "Duration": 2966250,
+        "text": {
+          "Text": "którego",
+          "Length": 7,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 167160830,
+        "Duration": 1695000,
+        "text": {
+          "Text": "nie",
+          "Length": 3,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 168855830,
+        "Duration": 1059160,
+        "text": {
+          "Text": "da",
+          "Length": 2,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 170021250,
+        "Duration": 1271250,
+        "text": {
+          "Text": "się",
+          "Length": 3,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 171398330,
+        "Duration": 6355830,
+        "text": {
+          "Text": "odwrócić",
+          "Length": 8,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 181250000,
+        "Duration": 1271250,
+        "text": {
+          "Text": "Przy",
+          "Length": 4,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 182521250,
+        "Duration": 4131250,
+        "text": {
+          "Text": "logowaniu",
+          "Length": 9,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 186652500,
+        "Duration": 3495830,
+        "text": {
+          "Text": "strona",
+          "Length": 6,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 190254160,
+        "Duration": 2860000,
+        "text": {
+          "Text": "robi",
+          "Length": 4,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 193114580,
+        "Duration": 1059160,
+        "text": {
+          "Text": "to",
+          "Length": 2,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 194173750,
+        "Duration": 2966250,
+        "text": {
+          "Text": "samo",
+          "Length": 4,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 197245830,
+        "Duration": 529580,
+        "text": {
+          "Text": "z",
+          "Length": 1,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 197775410,
+        "Duration": 5508330,
+        "text": {
+          "Text": "hasłem",
+          "Length": 6,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 206250000,
+        "Duration": 1906660,
+        "text": {
+          "Text": "które",
+          "Length": 5,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 208156660,
+        "Duration": 6779580,
+        "text": {
+          "Text": "wpisałeś",
+          "Length": 8,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 216631250,
+        "Duration": 635410,
+        "text": {
+          "Text": "i",
+          "Length": 1,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 217267080,
+        "Duration": 4660830,
+        "text": {
+          "Text": "porównuje",
+          "Length": 9,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 222033750,
+        "Duration": 4872910,
+        "text": {
+          "Text": "wyniki",
+          "Length": 6,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 230296660,
+        "Duration": 4237080,
+        "text": {
+          "Text": "Pasuje",
+          "Length": 6,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 238029580,
+        "Duration": 5720410,
+        "text": {
+          "Text": "Wchodzisz",
+          "Length": 9,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 247140000,
+        "Duration": 1377080,
+        "text": {
+          "Text": "Do",
+          "Length": 2,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 248517080,
+        "Duration": 2224580,
+        "text": {
+          "Text": "tego",
+          "Length": 4,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 250741660,
+        "Duration": 4025410,
+        "text": {
+          "Text": "dochodzi",
+          "Length": 8,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 254872910,
+        "Duration": 3813750,
+        "text": {
+          "Text": "sól",
+          "Length": 3,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 261017080,
+        "Duration": 2224580,
+        "text": {
+          "Text": "czyli",
+          "Length": 5,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 263241660,
+        "Duration": 3390000,
+        "text": {
+          "Text": "losowe",
+          "Length": 6,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 266737080,
+        "Duration": 3072080,
+        "text": {
+          "Text": "znaki",
+          "Length": 5,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 269809160,
+        "Duration": 3495830,
+        "text": {
+          "Text": "dodane",
+          "Length": 6,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 273305000,
+        "Duration": 847500,
+        "text": {
+          "Text": "do",
+          "Length": 2,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 274258330,
+        "Duration": 3813750,
+        "text": {
+          "Text": "każdego",
+          "Length": 7,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 278177910,
+        "Duration": 5720410,
+        "text": {
+          "Text": "hasła",
+          "Length": 5,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 287287910,
+        "Duration": 5402500,
+        "text": {
+          "Text": "Dzięki",
+          "Length": 6,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 292796660,
+        "Duration": 2860000,
+        "text": {
+          "Text": "temu",
+          "Length": 4,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 295762500,
+        "Duration": 2966250,
+        "text": {
+          "Text": "dwie",
+          "Length": 4,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 298834580,
+        "Duration": 3601660,
+        "text": {
+          "Text": "osoby",
+          "Length": 5,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 302436250,
+        "Duration": 529580,
+        "text": {
+          "Text": "z",
+          "Length": 1,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 302966250,
+        "Duration": 1377080,
+        "text": {
+          "Text": "tym",
+          "Length": 3,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 304343330,
+        "Duration": 3495830,
+        "text": {
+          "Text": "samym",
+          "Length": 5,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 307945000,
+        "Duration": 4978750,
+        "text": {
+          "Text": "hasłem",
+          "Length": 6,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 314195000,
+        "Duration": 2330410,
+        "text": {
+          "Text": "mają",
+          "Length": 4,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 316631250,
+        "Duration": 4555000,
+        "text": {
+          "Text": "zupełnie",
+          "Length": 8,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 321292500,
+        "Duration": 2965830,
+        "text": {
+          "Text": "inne",
+          "Length": 4,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 324258330,
+        "Duration": 5084580,
+        "text": {
+          "Text": "hasze",
+          "Length": 5,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 332732910,
+        "Duration": 529580,
+        "text": {
+          "Text": "A",
+          "Length": 1,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 333368750,
+        "Duration": 3177910,
+        "text": {
+          "Text": "dobre",
+          "Length": 5,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 336546660,
+        "Duration": 6673750,
+        "text": {
+          "Text": "algorytmy",
+          "Length": 9,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 345974580,
+        "Duration": 2118750,
+        "text": {
+          "Text": "jak",
+          "Length": 3,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 348093330,
+        "Duration": 2860000,
+        "text": {
+          "Text": "be",
+          "Length": 2,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 351059160,
+        "Duration": 3919580,
+        "text": {
+          "Text": "krypt",
+          "Length": 5,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 354978750,
+        "Duration": 2118750,
+        "text": {
+          "Text": "czy",
+          "Length": 3,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 357203330,
+        "Duration": 3707500,
+        "text": {
+          "Text": "Argon",
+          "Length": 5,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 361017080,
+        "Duration": 3707500,
+        "text": {
+          "Text": "dwa",
+          "Length": 3,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 367902500,
+        "Duration": 1800830,
+        "text": {
+          "Text": "są",
+          "Length": 2,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 369703330,
+        "Duration": 3390000,
+        "text": {
+          "Text": "celowo",
+          "Length": 6,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 373093330,
+        "Duration": 4449160,
+        "text": {
+          "Text": "wolne",
+          "Length": 5,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 380720410,
+        "Duration": 5296660,
+        "text": {
+          "Text": "Zgadywanie",
+          "Length": 10,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 386017080,
+        "Duration": 3919160,
+        "text": {
+          "Text": "milionów",
+          "Length": 8,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 389936250,
+        "Duration": 4343330,
+        "text": {
+          "Text": "haseł",
+          "Length": 5,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 394279580,
+        "Duration": 2860000,
+        "text": {
+          "Text": "staje",
+          "Length": 5,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 397245830,
+        "Duration": 1059160,
+        "text": {
+          "Text": "się",
+          "Length": 3,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 398410830,
+        "Duration": 2754160,
+        "text": {
+          "Text": "wtedy",
+          "Length": 5,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 401165410,
+        "Duration": 3707500,
+        "text": {
+          "Text": "bardzo",
+          "Length": 6,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 404872910,
+        "Duration": 4978750,
+        "text": {
+          "Text": "drogie",
+          "Length": 6,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 413347500,
+        "Duration": 2754160,
+        "text": {
+          "Text": "Jeśli",
+          "Length": 5,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 416101660,
+        "Duration": 3072080,
+        "text": {
+          "Text": "strona",
+          "Length": 6,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 419173750,
+        "Duration": 1165410,
+        "text": {
+          "Text": "po",
+          "Length": 2,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 420339160,
+        "Duration": 5720410,
+        "text": {
+          "Text": "kliknięciu",
+          "Length": 10,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 426165410,
+        "Duration": 1271250,
+        "text": {
+          "Text": "nie",
+          "Length": 3,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 427542500,
+        "Duration": 4555000,
+        "text": {
+          "Text": "pamiętam",
+          "Length": 8,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 432097500,
+        "Duration": 3389580,
+        "text": {
+          "Text": "hasła",
+          "Length": 5,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 435487080,
+        "Duration": 3177910,
+        "text": {
+          "Text": "wysyła",
+          "Length": 6,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 438771250,
+        "Duration": 1271250,
+        "text": {
+          "Text": "ci",
+          "Length": 2,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 440148330,
+        "Duration": 2648330,
+        "text": {
+          "Text": "twoje",
+          "Length": 5,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 442902500,
+        "Duration": 2648330,
+        "text": {
+          "Text": "stare",
+          "Length": 5,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 445550830,
+        "Duration": 3283750,
+        "text": {
+          "Text": "hasło",
+          "Length": 5,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 448940830,
+        "Duration": 4449160,
+        "text": {
+          "Text": "mailem",
+          "Length": 6,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 456250000,
+        "Duration": 1059160,
+        "text": {
+          "Text": "to",
+          "Length": 2,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 457309160,
+        "Duration": 5402500,
+        "text": {
+          "Text": "znaczy",
+          "Length": 6,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 465572080,
+        "Duration": 1165000,
+        "text": {
+          "Text": "że",
+          "Length": 2,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 466737080,
+        "Duration": 2860000,
+        "text": {
+          "Text": "trzyma",
+          "Length": 6,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 469597500,
+        "Duration": 1271250,
+        "text": {
+          "Text": "je",
+          "Length": 2,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 470868750,
+        "Duration": 5084580,
+        "text": {
+          "Text": "otwartym",
+          "Length": 8,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 476059160,
+        "Duration": 5084580,
+        "text": {
+          "Text": "tekstem",
+          "Length": 7,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 484533750,
+        "Duration": 7415410,
+        "text": {
+          "Text": "Uciekaj",
+          "Length": 7,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 495232910,
+        "Duration": 635410,
+        "text": {
+          "Text": "A",
+          "Length": 1,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 495868750,
+        "Duration": 7309160,
+        "text": {
+          "Text": "najpopularniejsze",
+          "Length": 17,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 503177910,
+        "Duration": 3390000,
+        "text": {
+          "Text": "hasło",
+          "Length": 5,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 506673750,
+        "Duration": 1059160,
+        "text": {
+          "Text": "na",
+          "Length": 2,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 507732910,
+        "Duration": 4449160,
+        "text": {
+          "Text": "świecie",
+          "Length": 7,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 512182080,
+        "Duration": 3707500,
+        "text": {
+          "Text": "to",
+          "Length": 2,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 515995830,
+        "Duration": 3919580,
+        "text": {
+          "Text": "wciąż",
+          "Length": 5,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 519915410,
+        "Duration": 3072080,
+        "text": {
+          "Text": "jeden",
+          "Length": 5,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 523093330,
+        "Duration": 3495830,
+        "text": {
+          "Text": "dwa",
+          "Length": 3,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 526695000,
+        "Duration": 3072080,
+        "text": {
+          "Text": "trzy",
+          "Length": 4,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 529872910,
+        "Duration": 3177910,
+        "text": {
+          "Text": "cztery",
+          "Length": 6,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 533050830,
+        "Duration": 3390000,
+        "text": {
+          "Text": "pięć",
+          "Length": 4,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 536546660,
+        "Duration": 5826250,
+        "text": {
+          "Text": "sześć",
+          "Length": 5,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 545868750,
+        "Duration": 4660830,
+        "text": {
+          "Text": "Bezpieczne",
+          "Length": 10,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 550529580,
+        "Duration": 4660830,
+        "text": {
+          "Text": "strony",
+          "Length": 6,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 555296660,
+        "Duration": 953330,
+        "text": {
+          "Text": "i",
+          "Length": 1,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 556250000,
+        "Duration": 4025410,
+        "text": {
+          "Text": "logowanie",
+          "Length": 9,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 560275410,
+        "Duration": 4872910,
+        "text": {
+          "Text": "budujemy",
+          "Length": 8,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 565148330,
+        "Duration": 1059160,
+        "text": {
+          "Text": "w",
+          "Length": 1,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 566313330,
+        "Duration": 4131250,
+        "text": {
+          "Text": "Delo",
+          "Length": 4,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 570445000,
+        "Duration": 5826250,
+        "text": {
+          "Text": "Kompani",
+          "Length": 7,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 579555000,
+        "Duration": 5720410,
+        "text": {
+          "Text": "Obserwuj",
+          "Length": 8,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 585275410,
+        "Duration": 1271250,
+        "text": {
+          "Text": "po",
+          "Length": 2,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    },
+    {
+      "Type": "WordBoundary",
+      "Data": {
+        "Offset": 586546660,
+        "Duration": 5932080,
+        "text": {
+          "Text": "więcej",
+          "Length": 6,
+          "BoundaryType": "WordBoundary"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pl">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#s02-root { position:absolute; inset:0; }
+#s02-root .stage { position:absolute; inset:0; }
+
+#s02-root .tag { position:absolute; left:0; right:0; top:200px; text-align:center; font-size:44px; color:var(--muted); }
+#s02-root .ttl { position:absolute; left:80px; right:80px; top:290px; text-align:center; font-size:84px; }
+#s02-root .row { position:absolute; left:110px; right:110px; height:120px; display:flex; align-items:center; gap:28px; padding:0 36px; border-radius:30px;
+  background:var(--panel); border:1.5px solid var(--line); font-size:52px; }
+#s02-root .row .ic { width:58px; height:58px; stroke-width:1.7; flex:none; }
+
+#s02-root .cap1 { position:absolute; left:0; right:0; top:470px; text-align:center; font-size:44px; color:var(--muted); }
+#s02-root .trk { position:absolute; left:170px; right:170px; top:560px; height:110px; }
+#s02-root .trk .ln { position:absolute; left:40px; right:40px; top:53px; height:4px; background:var(--line); border-radius:2px; }
+#s02-root .trk .fill { position:absolute; left:40px; right:40px; top:53px; height:4px; background:var(--yellow); border-radius:2px; transform-origin:0 50%; }
+#s02-root .trk .pt { position:absolute; top:20px; width:80px; height:70px; border-radius:20px; background:var(--panel); border:2px solid var(--line); font-size:38px; display:flex; align-items:center; justify-content:center; }
+#s02-root .trk .a { left:0; } #s02-root .trk .b { right:0; border-color:var(--yellow); color:var(--yellow); }
+#s02-root .lab { position:absolute; left:0; right:0; top:740px; text-align:center; font-size:54px; font-weight:600; }
+#s02-root .big { position:absolute; left:0; right:0; top:820px; text-align:center; font-size:250px; font-weight:700; letter-spacing:-0.05em; color:var(--yellow); }
+#s02-root .src { position:absolute; left:0; right:0; top:1140px; text-align:center; font-size:36px; color:var(--muted); }
+      </style>
+      <div id="s02-root" data-composition-id="s02" data-width="1080" data-height="1920">
+        <div class="stage">
+<div class="tag mono">IT OD ŚRODKA · #8</div>
+<h1 class="hd ttl">Według <span class="g">Google</span></h1>
+<div class="cap1">czas ładowania</div>
+<div class="trk"><div class="ln"></div><div class="fill"></div><div class="pt a mono">1 s</div><div class="pt b mono">3 s</div></div>
+<div class="lab">szansa, że ktoś wyjdzie</div>
+<div class="big mono">+0%</div>
+<div class="src mono">Google, 2017</div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var R = "#s02-root ";
+          var $ = function (s) { return R + s; };
+          var E = "power3.out", IO = "power2.inOut";
+          var tl = gsap.timeline({ paused: true });
+          function count(sel, from, to, t, d, fmt) {
+            var el = document.querySelector(R + sel);
+            var o = { v: from };
+            var f = fmt || function (v) { return Math.round(v).toLocaleString("en-US"); };
+            tl.fromTo(o, { v: from }, { v: to, duration: d, ease: "power2.out", onUpdate: function () { el.textContent = f(o.v); } }, t);
+          }
+          function draw(sel, t, d) {
+            tl.fromTo($(sel), { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: d || 0.5, ease: "power2.out" }, t);
+          }
+          tl.fromTo($(".stage"), { opacity: 0, scale: 1.04 }, { opacity: 1, scale: 1, duration: 0.35, ease: E }, 0);
+          var WX = [0], WY = [0];
+          function WARP(t) { var X = WX, Y = WY, n = X.length; if (t <= X[0]) return t; if (t >= X[n - 1]) return Y[n - 1] + (t - X[n - 1]);
+  for (var i = 1; i < n; i++) if (t <= X[i]) { var k = X[i] === X[i - 1] ? 0 : (t - X[i - 1]) / (X[i] - X[i - 1]); return Y[i - 1] + k * (Y[i] - Y[i - 1]); } return t; }
+          var T = function (g) { return WARP(g) - 3.85; };
+
+tl.fromTo($(".ttl"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(4.0));
+tl.fromTo($(".cap1"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(5.0));
+tl.fromTo($(".trk"), { opacity: 0 }, { opacity: 1, duration: 0.3 }, T(5.0));
+tl.fromTo($(".trk .a"), { scale: 0.7 }, { scale: 1, duration: 0.3, ease: E }, T(6.1));
+tl.fromTo($(".trk .fill"), { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: IO }, T(6.2));
+tl.fromTo($(".trk .b"), { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.3, ease: E }, T(6.5));
+tl.fromTo($(".lab"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(7.2));
+tl.fromTo($(".big"), { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.35, ease: E }, T(9.1));
+count(".big", 0, 32, T(9.15), 0.6, function (v) { return "+" + Math.round(v) + "%"; });
+tl.fromTo($(".src"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(9.8));
+
+          tl.to($(".stage"), { opacity: 0, scale: 0.97, duration: 0.3, ease: "power2.in" }, 6.15);
+          window.__timelines["s02"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

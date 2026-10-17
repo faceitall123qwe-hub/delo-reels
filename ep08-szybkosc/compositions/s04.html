@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pl">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#s04-root { position:absolute; inset:0; }
+#s04-root .stage { position:absolute; inset:0; }
+
+#s04-root .tag { position:absolute; left:0; right:0; top:200px; text-align:center; font-size:44px; color:var(--muted); }
+#s04-root .ttl { position:absolute; left:80px; right:80px; top:290px; text-align:center; font-size:84px; }
+#s04-root .row { position:absolute; left:110px; right:110px; height:120px; display:flex; align-items:center; gap:28px; padding:0 36px; border-radius:30px;
+  background:var(--panel); border:1.5px solid var(--line); font-size:52px; }
+#s04-root .row .ic { width:58px; height:58px; stroke-width:1.7; flex:none; }
+
+#s04-root .fc { position:absolute; left:110px; right:110px; height:250px; border-radius:30px; background:var(--panel); border:1.5px solid var(--line); }
+#s04-root .fc .fi { position:absolute; left:40px; top:40px; color:var(--muted); } #s04-root .fc .fi .ic { width:96px; height:96px; stroke-width:1.4; }
+#s04-root .fc .fn { position:absolute; left:170px; top:52px; font-size:44px; }
+#s04-root .fc .fs { position:absolute; right:40px; top:44px; font-size:62px; font-weight:700; }
+#s04-root .fc .fb { position:absolute; left:40px; right:40px; bottom:44px; height:22px; border-radius:11px; background:#1b2420; overflow:hidden; }
+#s04-root .fc .fb i { display:block; height:100%; border-radius:11px; transform-origin:0 50%; }
+#s04-root .fc .fb i.y { background:var(--yellow); } #s04-root .fc .fb i.g { background:var(--green); }
+#s04-root .c0 { top:500px; } #s04-root .c1 { top:1010px; border-color:#2b5a45; }
+#s04-root .mid { position:absolute; left:0; right:0; top:800px; display:flex; justify-content:center; align-items:center; gap:18px; font-size:46px; color:var(--green); }
+#s04-root .mid .ic { width:56px; height:56px; stroke-width:1.8; }
+      </style>
+      <div id="s04-root" data-composition-id="s04" data-width="1080" data-height="1920">
+        <div class="stage">
+<div class="tag mono">IT OD ŚRODKA · #8</div>
+<h1 class="hd ttl"><span class="y">1.</span> Zdjęcia</h1>
+
+<div class="fc c0"><div class="fi"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="18" height="18" x="3" y="3" rx="2" ry="2" /> <circle cx="9" cy="9" r="2" /> <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" /> </svg> </div><div class="fn mono">IMG_2041.jpg</div><div class="fs mono y">4,8 MB</div>
+<div class="fb"><i class="y" style="width:100%"></i></div></div>
+<div class="mid"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M10.3 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10l-3.1-3.1a2 2 0 0 0-2.814.014L6 21" /> <path d="m14 19 3 3v-5.5" /> <path d="m17 22 3-3" /> <circle cx="9" cy="9" r="2" /> </svg> <span>zmniejszenie + kompresja</span></div>
+
+<div class="fc c1"><div class="fi"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="18" height="18" x="3" y="3" rx="2" ry="2" /> <circle cx="9" cy="9" r="2" /> <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" /> </svg> </div><div class="fn mono">zdjecie.webp</div><div class="fs mono g">180 KB</div>
+<div class="fb"><i class="g" style="width:4%"></i></div></div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var R = "#s04-root ";
+          var $ = function (s) { return R + s; };
+          var E = "power3.out", IO = "power2.inOut";
+          var tl = gsap.timeline({ paused: true });
+          function count(sel, from, to, t, d, fmt) {
+            var el = document.querySelector(R + sel);
+            var o = { v: from };
+            var f = fmt || function (v) { return Math.round(v).toLocaleString("en-US"); };
+            tl.fromTo(o, { v: from }, { v: to, duration: d, ease: "power2.out", onUpdate: function () { el.textContent = f(o.v); } }, t);
+          }
+          function draw(sel, t, d) {
+            tl.fromTo($(sel), { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: d || 0.5, ease: "power2.out" }, t);
+          }
+          tl.fromTo($(".stage"), { opacity: 0, scale: 1.04 }, { opacity: 1, scale: 1, duration: 0.35, ease: E }, 0);
+          var WX = [0], WY = [0];
+          function WARP(t) { var X = WX, Y = WY, n = X.length; if (t <= X[0]) return t; if (t >= X[n - 1]) return Y[n - 1] + (t - X[n - 1]);
+  for (var i = 1; i < n; i++) if (t <= X[i]) { var k = X[i] === X[i - 1] ? 0 : (t - X[i - 1]) / (X[i] - X[i - 1]); return Y[i - 1] + k * (Y[i] - Y[i - 1]); } return t; }
+          var T = function (g) { return WARP(g) - 11.75; };
+
+tl.fromTo($(".ttl"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(11.9));
+tl.fromTo($(".c0"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(13.6));
+tl.fromTo($(".c0 .fs"), { opacity: 0 }, { opacity: 1, duration: 0.2 }, T(15.2));
+count(".c0 .fs", 0, 4.8, T(15.2), 0.5, function (v) { return v.toFixed(1).replace(".", ",") + " MB"; });
+tl.fromTo($(".c0 .fb i"), { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power2.out" }, T(15.2));
+tl.fromTo($(".mid"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(16.5));
+tl.fromTo($(".c1"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(17.3));
+tl.fromTo($(".c1 .fs"), { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.3, ease: E }, T(18.1));
+tl.fromTo($(".c1 .fb i"), { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power2.out" }, T(18.1));
+
+          tl.to($(".stage"), { opacity: 0, scale: 0.97, duration: 0.3, ease: "power2.in" }, 7.40);
+          window.__timelines["s04"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

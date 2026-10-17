@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pl">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#s02-root { position:absolute; inset:0; }
+#s02-root .stage { position:absolute; inset:0; }
+
+#s02-root .tag { position:absolute; left:0; right:0; top:200px; text-align:center; font-size:44px; color:var(--muted); }
+#s02-root .ttl { position:absolute; left:80px; right:80px; top:290px; text-align:center; font-size:84px; }
+#s02-root .ph { position:absolute; width:300px; height:420px; border-radius:44px; background:var(--panel); border:2.5px solid var(--line); }
+#s02-root .ph .who { position:absolute; left:0; right:0; bottom:24px; text-align:center; font-size:42px; color:var(--muted); }
+#s02-root .ph .key { position:absolute; left:50%; top:30px; width:70px; height:70px; margin-left:-35px; border-radius:20px; background:rgba(245,197,24,.15); color:var(--yellow); display:flex; align-items:center; justify-content:center; }
+#s02-root .ph .key .ic { width:44px; height:44px; stroke-width:1.8; }
+#s02-root .bub { position:absolute; padding:16px 26px; border-radius:26px 26px 26px 8px; background:#1d4a39; color:var(--text); font-size:44px; white-space:nowrap; }
+#s02-root .enc { position:absolute; padding:14px 24px; border-radius:20px; background:var(--panel); border:2px solid var(--yellow); color:var(--yellow); font-size:40px; white-space:nowrap; display:flex; align-items:center; gap:12px; }
+#s02-root .enc .ic { width:40px; height:40px; stroke-width:2; }
+
+#s02-root .p0 { left:100px; top:560px; height:380px; } #s02-root .p1 { left:680px; top:560px; height:380px; }
+#s02-root .b0 { left:100px; top:980px; }
+#s02-root .e0 { left:100px; top:980px; }
+#s02-root .lab { position:absolute; left:0; right:0; top:1110px; text-align:center; font-size:56px; font-weight:600; }
+      </style>
+      <div id="s02-root" data-composition-id="s02" data-width="1080" data-height="1920">
+        <div class="stage">
+<div class="tag mono">IT OD ŚRODKA · #7</div>
+<h1 class="hd ttl">Szyfrowanie <span class="g" style="white-space:nowrap">end-to-end</span></h1>
+<div class="ph p0"><div class="key k0"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z" /> <circle cx="16.5" cy="7.5" r=".5" fill="currentColor" /> </svg> </div><div class="who">ty</div></div>
+<div class="ph p1"><div class="key k1"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z" /> <circle cx="16.5" cy="7.5" r=".5" fill="currentColor" /> </svg> </div><div class="who">odbiorca</div></div>
+<div class="bub b0">Spotkanie o 15?</div>
+<div class="enc e0 mono"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="18" height="11" x="3" y="11" rx="2" ry="2" /> <path d="M7 11V7a5 5 0 0 1 10 0v4" /> </svg> x9#Qf!2@</div>
+<div class="lab">szyfrowane <span class="y">zanim wyjdzie</span> z telefonu</div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var R = "#s02-root ";
+          var $ = function (s) { return R + s; };
+          var E = "power3.out", IO = "power2.inOut";
+          var tl = gsap.timeline({ paused: true });
+          function count(sel, from, to, t, d, fmt) {
+            var el = document.querySelector(R + sel);
+            var o = { v: from };
+            var f = fmt || function (v) { return Math.round(v).toLocaleString("en-US"); };
+            tl.fromTo(o, { v: from }, { v: to, duration: d, ease: "power2.out", onUpdate: function () { el.textContent = f(o.v); } }, t);
+          }
+          function draw(sel, t, d) {
+            tl.fromTo($(sel), { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: d || 0.5, ease: "power2.out" }, t);
+          }
+          tl.fromTo($(".stage"), { opacity: 0, scale: 1.04 }, { opacity: 1, scale: 1, duration: 0.35, ease: E }, 0);
+          var WX = [0], WY = [0];
+          function WARP(t) { var X = WX, Y = WY, n = X.length; if (t <= X[0]) return t; if (t >= X[n - 1]) return Y[n - 1] + (t - X[n - 1]);
+  for (var i = 1; i < n; i++) if (t <= X[i]) { var k = X[i] === X[i - 1] ? 0 : (t - X[i - 1]) / (X[i] - X[i - 1]); return Y[i - 1] + k * (Y[i] - Y[i - 1]); } return t; }
+          var T = function (g) { return WARP(g) - 6.4; };
+
+tl.fromTo($(".ttl"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(6.6));
+tl.fromTo($(".ph"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E, stagger: 0.15 }, T(8.4));
+tl.fromTo($(".key"), { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: E, stagger: 0.15 }, T(10.6));
+tl.fromTo($(".b0"), { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.35, ease: E }, T(11.4));
+tl.to($(".b0"), { opacity: 0, filter: "blur(8px)", duration: 0.3 }, T(12.15));
+tl.fromTo($(".e0"), { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.35 }, T(12.25));
+tl.fromTo($(".lab"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(12.9));
+
+          tl.to($(".stage"), { opacity: 0, scale: 0.97, duration: 0.3, ease: "power2.in" }, 7.90);
+          window.__timelines["s02"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pl">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#s01-root { position:absolute; inset:0; }
+#s01-root .stage { position:absolute; inset:0; }
+
+#s01-root .tag { position:absolute; left:0; right:0; top:200px; text-align:center; font-size:44px; color:var(--muted); }
+#s01-root .ttl { position:absolute; left:80px; right:80px; top:290px; text-align:center; font-size:84px; }
+#s01-root .site { position:absolute; height:130px; border-radius:30px; background:var(--panel); border:2px solid var(--line);
+  display:flex; align-items:center; justify-content:center; gap:16px; font-size:42px; }
+#s01-root .site .ic { width:48px; height:48px; color:var(--muted); stroke-width:1.7; }
+#s01-root .bot { position:absolute; width:100px; height:100px; border-radius:50%; background:var(--green); color:#0b0e0d; display:flex; align-items:center; justify-content:center; }
+#s01-root .bot .ic { width:58px; height:58px; stroke-width:2; }
+
+#s01-root .q { position:absolute; left:80px; right:80px; top:300px; text-align:center; font-size:92px; }
+#s01-root .s0 { left:240px; right:240px; top:620px; }
+#s01-root .nw { position:absolute; left:760px; top:590px; padding:6px 18px; border-radius:14px; background:var(--green); color:#0b0e0d; font-size:32px; font-weight:700; }
+#s01-root .sb { position:absolute; left:120px; right:120px; top:870px; height:120px; border-radius:60px; background:var(--panel); border:1.5px solid var(--line);
+  display:flex; align-items:center; gap:20px; padding:0 40px; font-size:44px; color:var(--muted); }
+#s01-root .sb .ic { width:50px; height:50px; stroke-width:1.8; }
+#s01-root .qm { position:absolute; left:0; right:0; top:1040px; text-align:center; font-size:150px; font-weight:700; color:var(--yellow); }
+      </style>
+      <div id="s01-root" data-composition-id="s01" data-width="1080" data-height="1920">
+        <div class="stage">
+<div class="tag mono">IT OD ŚRODKA · #9</div>
+<h1 class="hd q">Skąd <span class="g">Google</span> wie<br>o twojej stronie?</h1>
+<div class="site s0"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <circle cx="12" cy="12" r="10" /> <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /> <path d="M2 12h20" /> </svg> <span class="mono">twojafirma.pl</span></div>
+<div class="nw mono">NOWA</div>
+<div class="sb"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="m21 21-4.34-4.34" /> <circle cx="11" cy="11" r="8" /> </svg> <span class="mono">twojafirma</span></div>
+<div class="qm">?</div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var R = "#s01-root ";
+          var $ = function (s) { return R + s; };
+          var E = "power3.out", IO = "power2.inOut";
+          var tl = gsap.timeline({ paused: true });
+          function count(sel, from, to, t, d, fmt) {
+            var el = document.querySelector(R + sel);
+            var o = { v: from };
+            var f = fmt || function (v) { return Math.round(v).toLocaleString("en-US"); };
+            tl.fromTo(o, { v: from }, { v: to, duration: d, ease: "power2.out", onUpdate: function () { el.textContent = f(o.v); } }, t);
+          }
+          function draw(sel, t, d) {
+            tl.fromTo($(sel), { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: d || 0.5, ease: "power2.out" }, t);
+          }
+          tl.fromTo($(".stage"), { opacity: 0, scale: 1.04 }, { opacity: 1, scale: 1, duration: 0.35, ease: E }, 0);
+          var WX = [0], WY = [0];
+          function WARP(t) { var X = WX, Y = WY, n = X.length; if (t <= X[0]) return t; if (t >= X[n - 1]) return Y[n - 1] + (t - X[n - 1]);
+  for (var i = 1; i < n; i++) if (t <= X[i]) { var k = X[i] === X[i - 1] ? 0 : (t - X[i - 1]) / (X[i] - X[i - 1]); return Y[i - 1] + k * (Y[i] - Y[i - 1]); } return t; }
+          var T = function (g) { return WARP(g) - 0; };
+
+tl.fromTo($(".tag"), { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0);
+tl.fromTo($(".q"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, 0.05);
+tl.fromTo($(".s0"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, 0.3);
+tl.fromTo($(".nw"), { opacity: 0, scale: 0.6, rotate: -8 }, { opacity: 1, scale: 1, rotate: 6, duration: 0.4, ease: E }, T(0.6));
+tl.fromTo($(".sb"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(1.9));
+tl.fromTo($(".qm"), { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.4, ease: E }, T(3.3));
+
+          tl.to($(".stage"), { opacity: 0, scale: 0.97, duration: 0.3, ease: "power2.in" }, 3.75);
+          window.__timelines["s01"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

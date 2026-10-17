@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pl">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#s05-root { position:absolute; inset:0; }
+#s05-root .stage { position:absolute; inset:0; }
+
+#s05-root .tag { position:absolute; left:0; right:0; top:200px; text-align:center; font-size:44px; color:var(--muted); }
+#s05-root .ttl { position:absolute; left:80px; right:80px; top:290px; text-align:center; font-size:84px; }
+#s05-root .site { position:absolute; height:130px; border-radius:30px; background:var(--panel); border:2px solid var(--line);
+  display:flex; align-items:center; justify-content:center; gap:16px; font-size:42px; }
+#s05-root .site .ic { width:48px; height:48px; color:var(--muted); stroke-width:1.7; }
+#s05-root .bot { position:absolute; width:100px; height:100px; border-radius:50%; background:var(--green); color:#0b0e0d; display:flex; align-items:center; justify-content:center; }
+#s05-root .bot .ic { width:58px; height:58px; stroke-width:2; }
+
+#s05-root .bot { left:170px; top:500px; }
+#s05-root .bub { position:absolute; left:290px; top:470px; width:80px; height:80px; border-radius:24px; background:var(--panel); border:2px solid var(--yellow);
+  color:var(--yellow); font-size:54px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+#s05-root .you { left:300px; right:300px; top:720px; opacity:.55; }
+#s05-root .ch { position:absolute; left:170px; right:170px; height:110px; border-radius:28px; background:var(--panel); border:1.5px solid #6b5a1a;
+  display:flex; align-items:center; gap:20px; padding:0 32px; font-size:46px; }
+#s05-root .ch .ic { width:50px; height:50px; color:var(--yellow); stroke-width:1.8; }
+#s05-root .c0 { top:930px; } #s05-root .c1 { top:1065px; }
+      </style>
+      <div id="s05-root" data-composition-id="s05" data-width="1080" data-height="1920">
+        <div class="stage">
+<div class="tag mono">IT OD ŚRODKA · #9</div>
+<h1 class="hd ttl">Brak <span class="y">linków</span> i mapy?</h1>
+<div class="bot"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M12 8V4H8" /> <rect width="16" height="12" x="4" y="8" rx="2" /> <path d="M2 14h2" /> <path d="M20 14h2" /> <path d="M15 13v2" /> <path d="M9 13v2" /> </svg> </div><div class="bub">?</div>
+<div class="site you"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <circle cx="12" cy="12" r="10" /> <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /> <path d="M2 12h20" /> </svg> <span class="mono">twojafirma.pl</span></div>
+<div class="ch c0"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" /> <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" /> </svg> 0 linków do ciebie</div>
+<div class="ch c1"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z" /> <path d="M15 5.764v15" /> <path d="M9 3.236v15" /> </svg> brak sitemap.xml</div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var R = "#s05-root ";
+          var $ = function (s) { return R + s; };
+          var E = "power3.out", IO = "power2.inOut";
+          var tl = gsap.timeline({ paused: true });
+          function count(sel, from, to, t, d, fmt) {
+            var el = document.querySelector(R + sel);
+            var o = { v: from };
+            var f = fmt || function (v) { return Math.round(v).toLocaleString("en-US"); };
+            tl.fromTo(o, { v: from }, { v: to, duration: d, ease: "power2.out", onUpdate: function () { el.textContent = f(o.v); } }, t);
+          }
+          function draw(sel, t, d) {
+            tl.fromTo($(sel), { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: d || 0.5, ease: "power2.out" }, t);
+          }
+          tl.fromTo($(".stage"), { opacity: 0, scale: 1.04 }, { opacity: 1, scale: 1, duration: 0.35, ease: E }, 0);
+          var WX = [0], WY = [0];
+          function WARP(t) { var X = WX, Y = WY, n = X.length; if (t <= X[0]) return t; if (t >= X[n - 1]) return Y[n - 1] + (t - X[n - 1]);
+  for (var i = 1; i < n; i++) if (t <= X[i]) { var k = X[i] === X[i - 1] ? 0 : (t - X[i - 1]) / (X[i] - X[i - 1]); return Y[i - 1] + k * (Y[i] - Y[i - 1]); } return t; }
+          var T = function (g) { return WARP(g) - 27.6; };
+
+tl.fromTo($(".ttl"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(27.75));
+tl.fromTo($(".you"), { opacity: 0 }, { opacity: 0.55, duration: 0.4 }, T(27.9));
+tl.fromTo($(".c0"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(28.5));
+tl.fromTo($(".c1"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(29.4));
+tl.fromTo($(".bot"), { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.35, ease: E }, T(30.3));
+tl.fromTo($(".bub"), { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: E }, T(30.5));
+tl.to([$(".bot"), $(".bub")], { x: 60, y: -20, duration: 0.5, ease: IO, yoyo: true, repeat: 1 }, T(30.8));
+tl.to([$(".bot"), $(".bub")], { x: -340, opacity: 0, duration: 0.5, ease: "power2.in" }, T(31.6));
+tl.to($(".you"), { opacity: 0.3, duration: 0.4 }, T(31.6));
+
+          tl.to($(".stage"), { opacity: 0, scale: 0.97, duration: 0.3, ease: "power2.in" }, 4.30);
+          window.__timelines["s05"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

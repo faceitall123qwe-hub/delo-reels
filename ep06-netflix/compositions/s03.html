@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pl">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#s03-root { position:absolute; inset:0; }
+#s03-root .stage { position:absolute; inset:0; }
+
+#s03-root .tag { position:absolute; left:0; right:0; top:200px; text-align:center; font-size:44px; color:var(--muted); }
+#s03-root .ttl { position:absolute; left:80px; right:80px; top:290px; text-align:center; font-size:84px; }
+#s03-root .num { color:var(--yellow); }
+#s03-root .nd { position:absolute; width:300px; height:200px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; color:var(--muted); }
+#s03-root .nd > .ic { width:76px; height:76px; stroke-width:1.4; }
+#s03-root .nd .lb { color:var(--text); font-size:46px; }
+
+#s03-root .wire .ln { stroke:var(--text); stroke-width:4; fill:none; }
+#s03-root .wire .night { fill:rgba(62,224,143,.14); stroke:none; }
+#s03-root .wire .eve { fill:rgba(245,197,24,.12); stroke:none; }
+#s03-root .wire .ax { stroke:var(--line); stroke-width:3; }
+#s03-root .lbl { position:absolute; font-size:42px; }
+#s03-root .l0 { left:162px; top:1090px; color:var(--green); } #s03-root .l1 { left:771px; top:1090px; color:var(--yellow); }
+#s03-root .hrs { position:absolute; left:120px; right:120px; top:1170px; display:flex; justify-content:space-between; font-size:40px; color:var(--muted); }
+#s03-root .moon { position:absolute; left:204px; top:560px; display:flex; flex-direction:column; align-items:center; gap:10px; color:var(--green); }
+#s03-root .moon .ic { width:84px; height:84px; stroke-width:1.5; }
+#s03-root .moon span { font-size:42px; }
+      </style>
+      <div id="s03-root" data-composition-id="s03" data-width="1080" data-height="1920">
+        <div class="stage">
+<div class="tag mono">IT OD ŚRODKA · #6</div>
+<h1 class="hd ttl"><span class="num">2.</span> Kopiowanie <span class="g">nocą</span></h1>
+<svg class="wire" viewBox="0 0 1080 1920">
+  <rect class="night" x="155" y="640" width="175" height="420" rx="16"/>
+  <rect class="eve" x="750" y="640" width="175" height="420" rx="16"/>
+  <path class="ax" d="M120 1060 L960 1060"/>
+  <path class="ln" pathLength="1" d="M120.0 967.6 L155.0 997.0 L190.0 1018.0 L225.0 1030.6 L260.0 1034.8 L295.0 1030.6 L330.0 1009.6 L365.0 967.6 L400.0 917.2 L435.0 892.0 L470.0 875.2 L505.0 862.6 L540.0 841.6 L575.0 850.0 L610.0 858.4 L645.0 850.0 L680.0 829.0 L715.0 795.4 L750.0 749.2 L785.0 698.8 L820.0 661.0 L855.0 648.4 L890.0 715.6 L925.0 871.0 L960.0 959.2"/>
+</svg>
+<div class="moon"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" /> </svg> <span>kopiowanie</span></div>
+<div class="lbl l0">mały ruch</div><div class="lbl l1">oglądanie</div>
+<div class="hrs mono"><span>00</span><span>06</span><span>12</span><span>18</span><span>24</span></div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var R = "#s03-root ";
+          var $ = function (s) { return R + s; };
+          var E = "power3.out", IO = "power2.inOut";
+          var tl = gsap.timeline({ paused: true });
+          function count(sel, from, to, t, d, fmt) {
+            var el = document.querySelector(R + sel);
+            var o = { v: from };
+            var f = fmt || function (v) { return Math.round(v).toLocaleString("en-US"); };
+            tl.fromTo(o, { v: from }, { v: to, duration: d, ease: "power2.out", onUpdate: function () { el.textContent = f(o.v); } }, t);
+          }
+          function draw(sel, t, d) {
+            tl.fromTo($(sel), { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: d || 0.5, ease: "power2.out" }, t);
+          }
+          tl.fromTo($(".stage"), { opacity: 0, scale: 1.04 }, { opacity: 1, scale: 1, duration: 0.35, ease: E }, 0);
+          var WX = [0], WY = [0];
+          function WARP(t) { var X = WX, Y = WY, n = X.length; if (t <= X[0]) return t; if (t >= X[n - 1]) return Y[n - 1] + (t - X[n - 1]);
+  for (var i = 1; i < n; i++) if (t <= X[i]) { var k = X[i] === X[i - 1] ? 0 : (t - X[i - 1]) / (X[i] - X[i - 1]); return Y[i - 1] + k * (Y[i] - Y[i - 1]); } return t; }
+          var T = function (g) { return WARP(g) - 16.4; };
+
+tl.fromTo($(".ttl"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(16.6));
+tl.fromTo([$(".ax"), $(".hrs")], { opacity: 0 }, { opacity: 1, duration: 0.4 }, T(17.0));
+draw(".ln", T(17.2), 1.6);
+tl.fromTo([$(".eve"), $(".l1")], { opacity: 0 }, { opacity: 1, duration: 0.4 }, T(18.5));
+tl.fromTo([$(".night"), $(".l0")], { opacity: 0 }, { opacity: 1, duration: 0.4 }, T(19.3));
+tl.fromTo($(".moon"), { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(19.4));
+
+          tl.to($(".stage"), { opacity: 0, scale: 0.97, duration: 0.3, ease: "power2.in" }, 4.50);
+          window.__timelines["s03"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

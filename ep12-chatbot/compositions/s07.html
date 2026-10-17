@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pl">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#s07-root { position:absolute; inset:0; }
+#s07-root .stage { position:absolute; inset:0; }
+
+#s07-root .tag { position:absolute; left:0; right:0; top:200px; text-align:center; font-size:44px; color:var(--muted); }
+#s07-root .ttl { position:absolute; left:80px; right:80px; top:290px; text-align:center; font-size:84px; }
+#s07-root .cw { position:absolute; left:110px; right:110px; border-radius:36px; background:#0e1311; border:1.5px solid var(--line); overflow:hidden; }
+#s07-root .cw .hb { height:100px; display:flex; align-items:center; gap:20px; padding:0 30px; border-bottom:1.5px solid var(--line); font-size:40px; }
+#s07-root .av { width:60px; height:60px; border-radius:50%; background:var(--green); color:#0b0e0d; display:flex; align-items:center; justify-content:center; flex:none; }
+#s07-root .av .ic { width:36px; height:36px; stroke-width:2; }
+#s07-root .cw .hb .st { margin-left:auto; font-size:32px; color:var(--green); }
+#s07-root .ub { position:absolute; right:30px; max-width:640px; padding:20px 28px; border-radius:28px 28px 8px 28px; background:#1d4a39; font-size:42px; }
+#s07-root .bb { position:absolute; left:30px; max-width:680px; padding:20px 28px; border-radius:28px 28px 28px 8px; background:var(--panel); border:1.5px solid var(--line); font-size:42px; line-height:1.25; }
+#s07-root .src { position:absolute; left:30px; padding:10px 20px; border-radius:16px; background:#123526; color:var(--green); font-size:32px; display:flex; align-items:center; gap:10px; }
+#s07-root .src .ic { width:34px; height:34px; stroke-width:2; }
+#s07-root .badge { position:absolute; padding:10px 22px; border-radius:16px; font-size:34px; font-weight:700; display:flex; align-items:center; gap:10px; }
+#s07-root .badge .ic { width:36px; height:36px; stroke-width:2.2; }
+#s07-root .bad { background:#3a2f1a; color:var(--yellow); border:2px solid var(--yellow); }
+#s07-root .row { position:absolute; left:110px; right:110px; height:120px; display:flex; align-items:center; gap:24px; padding:0 34px; border-radius:30px;
+  background:var(--panel); border:1.5px solid var(--line); font-size:46px; }
+#s07-root .row .ic { width:54px; height:54px; stroke-width:1.7; flex:none; }
+
+#s07-root .c4 { top:470px; height:660px; }
+#s07-root .c4 .ub { top:130px; }
+#s07-root .c4 .bb { top:260px; }
+#s07-root .c4 .src { top:370px; }
+#s07-root .hu { position:absolute; left:30px; right:30px; top:480px; padding:22px 28px; border-radius:24px; background:#123526; border:1.5px solid #2b5a45;
+  display:flex; align-items:center; gap:20px; font-size:40px; }
+#s07-root .hu .ic { width:52px; height:52px; color:var(--green); stroke-width:1.8; flex:none; }
+      </style>
+      <div id="s07-root" data-composition-id="s07" data-width="1080" data-height="1920">
+        <div class="stage">
+<div class="tag mono">IT OD ŚRODKA · #12</div>
+<h1 class="hd ttl">Dobry <span class="g">chatbot</span></h1>
+<div class="cw c4"><div class="hb"><div class="av"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M12 8V4H8" /> <rect width="16" height="12" x="4" y="8" rx="2" /> <path d="M2 14h2" /> <path d="M20 14h2" /> <path d="M15 13v2" /> <path d="M9 13v2" /> </svg> </div><span>Asystent</span><span class="st mono">online</span></div><div class="ub">Ile kosztuje dostawa?</div><div class="bb">Dostawa kurierem: 15 zł.</div>
+<div class="src mono"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" /> <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" /> </svg> źródło: cennik.pdf</div>
+<div class="hu"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z" /> <path d="M21 16v2a4 4 0 0 1-4 4h-5" /> </svg> <span>trudna sprawa? przekazuję konsultantowi</span></div></div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var R = "#s07-root ";
+          var $ = function (s) { return R + s; };
+          var E = "power3.out", IO = "power2.inOut";
+          var tl = gsap.timeline({ paused: true });
+          function count(sel, from, to, t, d, fmt) {
+            var el = document.querySelector(R + sel);
+            var o = { v: from };
+            var f = fmt || function (v) { return Math.round(v).toLocaleString("en-US"); };
+            tl.fromTo(o, { v: from }, { v: to, duration: d, ease: "power2.out", onUpdate: function () { el.textContent = f(o.v); } }, t);
+          }
+          function draw(sel, t, d) {
+            tl.fromTo($(sel), { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: d || 0.5, ease: "power2.out" }, t);
+          }
+          tl.fromTo($(".stage"), { opacity: 0, scale: 1.04 }, { opacity: 1, scale: 1, duration: 0.35, ease: E }, 0);
+          var WX = [0], WY = [0];
+          function WARP(t) { var X = WX, Y = WY, n = X.length; if (t <= X[0]) return t; if (t >= X[n - 1]) return Y[n - 1] + (t - X[n - 1]);
+  for (var i = 1; i < n; i++) if (t <= X[i]) { var k = X[i] === X[i - 1] ? 0 : (t - X[i - 1]) / (X[i] - X[i - 1]); return Y[i - 1] + k * (Y[i] - Y[i - 1]); } return t; }
+          var T = function (g) { return WARP(g) - 29.75; };
+
+tl.fromTo($(".ttl"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(29.9));
+tl.fromTo($(".c4"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(30.0));
+tl.fromTo($(".c4 .ub"), { opacity: 0, y: 24, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: E }, T(30.2));
+tl.fromTo($(".c4 .bb"), { opacity: 0, y: 24, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: E }, T(30.5));
+tl.fromTo($(".c4 .src"), { opacity: 0, y: 24, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: E }, T(30.95));
+tl.fromTo($(".c4 .hu"), { opacity: 0, y: 24, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: E }, T(32.6));
+
+          tl.to($(".stage"), { opacity: 0, scale: 0.97, duration: 0.3, ease: "power2.in" }, 3.80);
+          window.__timelines["s07"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pl">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#s02-root { position:absolute; inset:0; }
+#s02-root .stage { position:absolute; inset:0; }
+
+#s02-root .tag { position:absolute; left:0; right:0; top:200px; text-align:center; font-size:44px; color:var(--muted); }
+#s02-root .ttl { position:absolute; left:80px; right:80px; top:290px; text-align:center; font-size:84px; }
+#s02-root .box { position:absolute; left:120px; right:120px; height:130px; border-radius:28px; background:var(--panel); border:1.5px solid var(--line);
+  display:flex; align-items:center; justify-content:center; gap:22px; font-size:52px; }
+#s02-root .box .ic { width:56px; height:56px; stroke-width:1.6; flex:none; }
+#s02-root .hash { font-size:40px; color:var(--green); letter-spacing:-0.02em; }
+#s02-root .arr { position:absolute; left:0; right:0; text-align:center; font-size:72px; color:var(--muted); }
+#s02-root .ch { display:none; }
+
+#s02-root .b0 { top:440px; } #s02-root .b1 { top:680px; border-color:rgba(62,224,143,.6); } #s02-root .b2 { top:920px; }
+#s02-root .b1 .ic { color:var(--green); }
+#s02-root .a0 { top:575px; } #s02-root .a1 { top:815px; }
+#s02-root .no { position:absolute; left:0; right:0; top:1100px; display:flex; justify-content:center; align-items:center; gap:22px; font-size:50px; color:var(--yellow); }
+#s02-root .no .ic { width:56px; height:56px; stroke-width:1.8; }
+      </style>
+      <div id="s02-root" data-composition-id="s02" data-width="1080" data-height="1920">
+        <div class="stage">
+<div class="tag mono">IT OD ŚRODKA · #5</div>
+<h1 class="hd ttl">Zakładasz <span class="g">konto</span></h1>
+<div class="box b0 mono">kot123</div>
+<div class="arr a0">↓</div>
+<div class="box b1"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M12 20v2" /> <path d="M12 2v2" /> <path d="M17 20v2" /> <path d="M17 2v2" /> <path d="M2 12h2" /> <path d="M2 17h2" /> <path d="M2 7h2" /> <path d="M20 12h2" /> <path d="M20 17h2" /> <path d="M20 7h2" /> <path d="M7 20v2" /> <path d="M7 2v2" /> <rect x="4" y="4" width="16" height="16" rx="2" /> <rect x="8" y="8" width="8" height="8" rx="1" /> </svg> <span>funkcja skrótu (hash)</span></div>
+<div class="arr a1">↓</div>
+<div class="box b2"><span class="mono hash">$2b$12$R9h7cIPz0gi.URNNX3kh2O</span></div>
+<div class="no"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M9 14 4 9l5-5" /> <path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5a5.5 5.5 0 0 1-5.5 5.5H11" /> </svg> <span>nie da się odwrócić</span></div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var R = "#s02-root ";
+          var $ = function (s) { return R + s; };
+          var E = "power3.out", IO = "power2.inOut";
+          var tl = gsap.timeline({ paused: true });
+          function count(sel, from, to, t, d, fmt) {
+            var el = document.querySelector(R + sel);
+            var o = { v: from };
+            var f = fmt || function (v) { return Math.round(v).toLocaleString("en-US"); };
+            tl.fromTo(o, { v: from }, { v: to, duration: d, ease: "power2.out", onUpdate: function () { el.textContent = f(o.v); } }, t);
+          }
+          function draw(sel, t, d) {
+            tl.fromTo($(sel), { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: d || 0.5, ease: "power2.out" }, t);
+          }
+          tl.fromTo($(".stage"), { opacity: 0, scale: 1.04 }, { opacity: 1, scale: 1, duration: 0.35, ease: E }, 0);
+          var WX = [0,0.335,1.15,1.288,1.532,1.648,2.39,2.602,2.792,3.131,3.989,4.032,4.403,5.197,5.822,6.034,6.14,6.913,7.083,7.549,8.248,8.587,8.703,9.159,10.07,10.483,10.578,10.769,11.15,11.903,12.199,13.089,13.153,13.523,13.767,14.095,14.413,14.837,15.049,15.186,15.6,15.886,16.659,16.966,17.136,17.252,17.39,18.375,18.502,18.915,19.275,19.561,19.667,19.975,20.028,20.875,21.066,21.913,21.977,22.453,23.28,24.053,24.964,25.102,25.324,25.737,26.352,26.574,26.924,27.231,27.581,27.676,28.068,28.979,29.53,29.826,30.133,30.494,30.547,30.684,31.044,31.669,31.913,32.379,32.676,33.523,33.587,33.905,34.847,35.059,35.356,35.748,35.97,36.352,37.04,37.22,37.559,38.322,38.852,39.244,39.678,39.975,40.091,40.367,40.737,41.585,41.86,42.167,42.284,42.867,43.004,43.46,43.799,44.127,44.265,44.54,44.805,45.144,45.875,45.981,46.807,46.924,47.21,47.337,47.856,48.703,49.773,49.837,50.568,50.917,51.023,51.468,51.85,52.242,52.559,52.919,53.237,53.555,53.905,54.837,55.303,55.78,55.875,56.278,56.765,56.881,57.294,58.206,58.778,58.905], WY = [0,0.298,1.049,1.179,1.397,1.505,2.19,2.354,2.495,2.821,3.555,3.664,3.957,4.703,5.41,5.594,5.714,6.394,6.644,7.024,7.633,7.981,8.09,8.481,9.226,9.792,9.879,10.074,10.411,11.096,11.368,12.07,12.2,12.537,12.722,13.016,13.211,13.526,13.776,13.896,14.168,14.374,15.005,15.364,15.462,15.56,15.668,16.5,16.74,17.218,17.522,17.718,17.805,18.011,18.066,18.686,18.914,19.621,19.719,20.153,20.899,21.709,22.606,22.802,23.041,23.378,23.955,24.183,24.542,24.824,25.14,25.227,25.585,26.32,26.7,26.917,27.135,27.417,27.461,27.591,27.841,28.385,28.678,29.102,29.341,30.054,30.184,30.456,31.196,31.38,31.511,31.837,32.054,32.359,32.837,33.055,33.37,34.05,34.583,34.985,35.398,35.68,35.789,36.017,36.311,37.013,37.36,37.665,37.784,38.273,38.371,38.752,39.132,39.426,39.534,39.741,39.98,40.263,40.817,40.948,41.513,41.666,41.937,42.035,42.427,43.139,44.189,44.33,45.058,45.341,45.428,45.787,45.906,46.243,46.58,46.797,47.004,47.265,47.493,48.151,48.684,49.108,49.206,49.619,50.043,50.086,50.423,51.255,51.744,51.853];
+          function WARP(t) { var X = WX, Y = WY, n = X.length; if (t <= X[0]) return t; if (t >= X[n - 1]) return Y[n - 1] + (t - X[n - 1]);
+  for (var i = 1; i < n; i++) if (t <= X[i]) { var k = X[i] === X[i - 1] ? 0 : (t - X[i - 1]) / (X[i] - X[i - 1]); return Y[i - 1] + k * (Y[i] - Y[i - 1]); } return t; }
+          var T = function (g) { return WARP(g) - 6.29; };
+
+tl.fromTo($(".ttl"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(6.9));
+tl.fromTo($(".b0"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(8.6));
+tl.fromTo($(".a0"), { opacity: 0 }, { opacity: 1, duration: 0.3 }, T(10.0));
+tl.fromTo($(".b1"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(10.7));
+tl.fromTo($(".a1"), { opacity: 0 }, { opacity: 1, duration: 0.3 }, T(14.6));
+tl.fromTo($(".b2"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(15.0));
+tl.fromTo($(".no"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(17.3));
+tl.fromTo($(".no .ic"), { rotate: 0 }, { rotate: -40, duration: 0.3, yoyo: true, repeat: 1, ease: "power2.inOut" }, T(17.6));
+
+          tl.to($(".stage"), { opacity: 0, scale: 0.97, duration: 0.3, ease: "power2.in" }, 9.51);
+          window.__timelines["s02"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pl">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#s06-root { position:absolute; inset:0; }
+#s06-root .stage { position:absolute; inset:0; }
+
+#s06-root .tag { position:absolute; left:0; right:0; top:200px; text-align:center; font-size:44px; color:var(--muted); }
+#s06-root .ttl { position:absolute; left:80px; right:80px; top:290px; text-align:center; font-size:84px; }
+#s06-root .nd { position:absolute; width:250px; height:230px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; color:var(--muted); }
+#s06-root .nd > .ic { width:84px; height:84px; stroke-width:1.4; }
+#s06-root .nd .lb { color:var(--text); font-size:46px; }
+#s06-root .avatar { position:absolute; width:90px; height:90px; border-radius:22px; background:var(--green); }
+
+#s06-root .srv { position:absolute; left:250px; top:440px; width:580px; height:200px; display:flex; align-items:center; justify-content:center; gap:20px; color:var(--green); }
+#s06-root .srv .ic { width:72px; height:72px; stroke-width:1.4; }
+#s06-root .srv .lb { color:var(--text); font-size:52px; }
+#s06-root .wire path { stroke:var(--green); stroke-width:3; }
+#s06-root .pl { position:absolute; top:900px; width:250px; height:300px; border-radius:28px; background:var(--panel); border:1.5px solid var(--line); }
+#s06-root .pl .lb { position:absolute; left:0; right:0; top:20px; text-align:center; font-size:44px; color:var(--muted); }
+#s06-root .pl .fl { position:absolute; left:40px; right:40px; top:250px; height:4px; background:var(--line); }
+#s06-root .pl .avatar { left:90px; top:180px; width:70px; height:70px; border-radius:18px; }
+#s06-root .p0 { left:100px; }
+#s06-root .p1 { left:415px; }
+#s06-root .p2 { left:730px; }
+#s06-root .cap { position:absolute; left:80px; right:80px; top:1260px; text-align:center; font-size:56px; font-weight:600; }
+      </style>
+      <div id="s06-root" data-composition-id="s06" data-width="1080" data-height="1920">
+        <div class="stage">
+<div class="tag mono">IT OD ŚRODKA · #1</div>
+<div class="card srv"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="20" height="8" x="2" y="2" rx="2" ry="2" /> <rect width="20" height="8" x="2" y="14" rx="2" ry="2" /> <line x1="6" x2="6.01" y1="6" y2="6" /> <line x1="6" x2="6.01" y1="18" y2="18" /> </svg> <span class="lb">nowy stan gry</span></div>
+<svg class="wire" viewBox="0 0 1080 1920"><path class="w0" pathLength="1" d="M540 640 C 540 770, 225 770, 225 900"/><path class="w1" pathLength="1" d="M540 640 C 540 770, 540 770, 540 900"/><path class="w2" pathLength="1" d="M540 640 C 540 770, 855 770, 855 900"/></svg>
+<div class="pl p0"><div class="lb">gracz 1</div><div class="fl"></div><div class="avatar"></div></div><div class="pl p1"><div class="lb">gracz 2</div><div class="fl"></div><div class="avatar"></div></div><div class="pl p2"><div class="lb">gracz 3</div><div class="fl"></div><div class="avatar"></div></div>
+<div class="cap">teraz <span class="y">inni</span> widzą twój skok</div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var R = "#s06-root ";
+          var $ = function (s) { return R + s; };
+          var E = "power3.out", IO = "power2.inOut";
+          var tl = gsap.timeline({ paused: true });
+          function count(sel, from, to, t, d, fmt) {
+            var el = document.querySelector(R + sel);
+            var o = { v: from };
+            var f = fmt || function (v) { return Math.round(v).toLocaleString("en-US"); };
+            tl.fromTo(o, { v: from }, { v: to, duration: d, ease: "power2.out", onUpdate: function () { el.textContent = f(o.v); } }, t);
+          }
+          function draw(sel, t, d) {
+            tl.fromTo($(sel), { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: d || 0.5, ease: "power2.out" }, t);
+          }
+          tl.fromTo($(".stage"), { opacity: 0, scale: 1.04 }, { opacity: 1, scale: 1, duration: 0.35, ease: E }, 0);
+          var WX = [0,0.35,0.707,1.064,1.109,1.5,1.567,1.801,2.147,3.481,3.682,3.726,3.894,4.195,4.608,4.798,4.898,5.255,6.483,6.985,7.253,7.8,7.845,8.113,8.179,8.425,8.57,8.693,8.804,8.883,9.697,9.921,10.211,10.434,10.501,11.851,12.097,12.197,12.398,12.733,12.956,13.023,13.659,13.916,14.24,14.653,16.014,16.137,16.304,16.595,18.101,18.202,18.336,18.637,18.838,19.005,19.429,19.496,19.586,19.842,20.11,20.278,20.735,20.836,21.193,22.32,22.677,23.481,23.57,23.793,23.927,24.351,24.407,24.485,24.563,25.367,25.423,25.624,26.36,26.427,26.729,27.164,27.432,27.621,27.688,28.99,29.258,29.526,29.693,29.939,30.106,30.196,30.53,30.999,31.044,31.289,31.524,31.78,32.372,32.472,33.905,34.162,34.262,34.552,34.787,35.099,35.624,37.142,37.554,37.7,38.157,39.441,39.697,40.032,40.367,40.445,40.557,41.014,41.26,41.394,42.644,43.023,43.782,44.251,44.362,45.992,46.528,46.639], WY = [0,0.298,0.701,1.038,1.092,1.44,1.548,1.788,2.114,2.881,3.087,3.131,3.315,3.609,4.065,4.283,4.391,4.783,5.452,5.984,6.289,6.93,7.028,7.332,7.419,7.68,7.843,8.006,8.137,8.224,8.941,9.224,9.528,9.757,9.844,10.643,10.915,11.045,11.295,11.697,11.937,12.002,12.546,12.85,13.165,13.567,14.432,14.584,14.737,14.997,15.927,16.025,16.188,16.504,16.732,16.927,17.351,17.482,17.623,17.83,18.08,18.286,18.699,18.808,19.177,19.727,20.14,20.836,20.967,21.173,21.336,21.804,21.912,22.021,22.119,22.826,22.924,23.119,23.728,23.848,24.163,24.576,24.826,25.033,25.109,25.876,26.202,26.506,26.724,26.963,27.126,27.234,27.626,28.137,28.234,28.506,28.756,29.039,29.604,29.746,30.621,30.904,31.024,31.295,31.6,31.937,32.524,33.464,33.943,34.117,34.638,35.373,35.666,36.025,36.416,36.525,36.634,37.167,37.438,37.569,38.194,38.575,39.315,39.815,39.978,41.136,41.625,41.734];
+          function WARP(t) { var X = WX, Y = WY, n = X.length; if (t <= X[0]) return t; if (t >= X[n - 1]) return Y[n - 1] + (t - X[n - 1]);
+  for (var i = 1; i < n; i++) if (t <= X[i]) { var k = X[i] === X[i - 1] ? 0 : (t - X[i - 1]) / (X[i] - X[i - 1]); return Y[i - 1] + k * (Y[i] - Y[i - 1]); } return t; }
+          var T = function (g) { return WARP(g) - 25.76; };
+
+tl.fromTo($(".srv"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(28.9));
+draw(".w0", T(29.3) + 0 * 0.15, 0.5);
+draw(".w1", T(29.3) + 1 * 0.15, 0.5);
+draw(".w2", T(29.3) + 2 * 0.15, 0.5);
+tl.fromTo($(".pl"), { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.45, ease: E, stagger: 0.12 }, T(30.1));
+tl.to($(".pl .avatar"), { y: -110, duration: 0.35, ease: "power2.out", stagger: 0.05 }, T(32.4));
+tl.to($(".pl .avatar"), { y: 0, duration: 0.35, ease: "power2.in", stagger: 0.05 }, T(32.75));
+tl.fromTo($(".cap"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(31.5));
+
+          tl.to($(".stage"), { opacity: 0, scale: 0.97, duration: 0.3, ease: "power2.in" }, 4.44);
+          window.__timelines["s06"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pl">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#s01-root { position:absolute; inset:0; }
+#s01-root .stage { position:absolute; inset:0; }
+
+#s01-root .tag { position:absolute; left:0; right:0; top:200px; text-align:center; font-size:44px; color:var(--muted); }
+#s01-root .ttl { position:absolute; left:80px; right:80px; top:290px; text-align:center; font-size:84px; }
+#s01-root .ph { position:absolute; width:300px; height:420px; border-radius:44px; background:var(--panel); border:2.5px solid var(--line); }
+#s01-root .ph .who { position:absolute; left:0; right:0; bottom:24px; text-align:center; font-size:42px; color:var(--muted); }
+#s01-root .ph .key { position:absolute; left:50%; top:30px; width:70px; height:70px; margin-left:-35px; border-radius:20px; background:rgba(245,197,24,.15); color:var(--yellow); display:flex; align-items:center; justify-content:center; }
+#s01-root .ph .key .ic { width:44px; height:44px; stroke-width:1.8; }
+#s01-root .bub { position:absolute; padding:16px 26px; border-radius:26px 26px 26px 8px; background:#1d4a39; color:var(--text); font-size:44px; white-space:nowrap; }
+#s01-root .enc { position:absolute; padding:14px 24px; border-radius:20px; background:var(--panel); border:2px solid var(--yellow); color:var(--yellow); font-size:40px; white-space:nowrap; display:flex; align-items:center; gap:12px; }
+#s01-root .enc .ic { width:40px; height:40px; stroke-width:2; }
+
+#s01-root .q { position:absolute; left:80px; right:80px; top:300px; text-align:center; font-size:96px; }
+#s01-root .chat { position:absolute; left:140px; right:140px; top:620px; height:440px; border-radius:36px; background:#0e1311; border:1.5px solid var(--line); }
+#s01-root .chat .bub { right:40px; top:60px; border-radius:26px 26px 8px 26px; }
+#s01-root .chat .tick { position:absolute; right:48px; top:150px; font-size:40px; color:var(--green); }
+#s01-root .ans { position:absolute; left:0; right:0; top:1110px; display:flex; justify-content:center; align-items:center; gap:24px; font-size:64px; font-weight:700; letter-spacing:-0.02em; }
+#s01-root .ans .ic { width:70px; height:70px; color:var(--green); stroke-width:1.8; }
+      </style>
+      <div id="s01-root" data-composition-id="s01" data-width="1080" data-height="1920">
+        <div class="stage">
+<div class="tag mono">IT OD ŚRODKA · #7</div>
+<h1 class="hd q">Kto może przeczytać <span class="g">twoją wiadomość</span>?</h1>
+<div class="chat"><div class="bub">Spotkanie o 15?</div><div class="tick mono">✓✓</div></div>
+<div class="ans"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49" /> <path d="M14.084 14.158a3 3 0 0 1-4.242-4.242" /> <path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143" /> <path d="m2 2 20 20" /> </svg> <span>nawet <span class="g">WhatsApp</span> nie</span></div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var R = "#s01-root ";
+          var $ = function (s) { return R + s; };
+          var E = "power3.out", IO = "power2.inOut";
+          var tl = gsap.timeline({ paused: true });
+          function count(sel, from, to, t, d, fmt) {
+            var el = document.querySelector(R + sel);
+            var o = { v: from };
+            var f = fmt || function (v) { return Math.round(v).toLocaleString("en-US"); };
+            tl.fromTo(o, { v: from }, { v: to, duration: d, ease: "power2.out", onUpdate: function () { el.textContent = f(o.v); } }, t);
+          }
+          function draw(sel, t, d) {
+            tl.fromTo($(sel), { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: d || 0.5, ease: "power2.out" }, t);
+          }
+          tl.fromTo($(".stage"), { opacity: 0, scale: 1.04 }, { opacity: 1, scale: 1, duration: 0.35, ease: E }, 0);
+          var WX = [0], WY = [0];
+          function WARP(t) { var X = WX, Y = WY, n = X.length; if (t <= X[0]) return t; if (t >= X[n - 1]) return Y[n - 1] + (t - X[n - 1]);
+  for (var i = 1; i < n; i++) if (t <= X[i]) { var k = X[i] === X[i - 1] ? 0 : (t - X[i - 1]) / (X[i] - X[i - 1]); return Y[i - 1] + k * (Y[i] - Y[i - 1]); } return t; }
+          var T = function (g) { return WARP(g) - 0; };
+
+tl.fromTo($(".tag"), { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0);
+tl.fromTo($(".q"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, 0.05);
+tl.fromTo($(".chat"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, 0.2);
+tl.fromTo($(".chat .bub"), { opacity: 0, y: 30, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: E }, T(1.0));
+tl.fromTo($(".chat .tick"), { opacity: 0 }, { opacity: 1, duration: 0.3 }, T(1.6));
+tl.fromTo($(".ans"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(5.1));
+
+          tl.to($(".stage"), { opacity: 0, scale: 0.97, duration: 0.3, ease: "power2.in" }, 6.10);
+          window.__timelines["s01"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

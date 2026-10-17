@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pl">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#s08-root { position:absolute; inset:0; }
+#s08-root .stage { position:absolute; inset:0; }
+
+#s08-root .tag { position:absolute; left:0; right:0; top:200px; text-align:center; font-size:44px; color:var(--muted); }
+#s08-root .ttl { position:absolute; left:80px; right:80px; top:290px; text-align:center; font-size:84px; }
+#s08-root .nd { position:absolute; width:250px; height:230px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; color:var(--muted); }
+#s08-root .nd > .ic { width:84px; height:84px; stroke-width:1.4; }
+#s08-root .nd .lb { color:var(--text); font-size:46px; }
+#s08-root .bar { position:absolute; left:100px; right:100px; height:110px; border-radius:55px; background:var(--panel); border:2px solid var(--line);
+  display:flex; align-items:center; gap:22px; padding:0 40px; font-size:54px; }
+#s08-root .bar .ic { width:48px; height:48px; color:var(--muted); stroke-width:1.8; flex:none; }
+#s08-root .ch { display:none; }
+
+#s08-root .src { position:absolute; left:0; right:0; top:300px; text-align:center; font-size:48px; color:var(--muted); }
+#s08-root .tm { position:absolute; left:0; right:0; top:430px; display:flex; justify-content:center; align-items:center; gap:30px; color:var(--yellow); }
+#s08-root .tm .ic { width:130px; height:130px; stroke-width:1.5; }
+#s08-root .tm .v { font-size:200px; font-weight:700; letter-spacing:-0.04em; }
+#s08-root .lb2 { position:absolute; left:80px; right:80px; top:700px; text-align:center; font-size:56px; color:var(--muted); }
+#s08-root .ppl { position:absolute; left:120px; top:840px; width:840px; display:grid; grid-template-columns:repeat(10, 1fr); gap:14px; }
+#s08-root .ppl i { display:block; height:84px; border-radius:42px 42px 14px 14px; background:var(--green); }
+#s08-root .big { position:absolute; left:80px; right:80px; top:1060px; text-align:center; font-size:76px; font-weight:700; letter-spacing:-0.03em; }
+      </style>
+      <div id="s08-root" data-composition-id="s08" data-width="1080" data-height="1920">
+        <div class="stage">
+<div class="tag mono">IT OD ŚRODKA · #2</div>
+<div class="src">według Google</div>
+<div class="tm"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <line x1="10" x2="14" y1="2" y2="2" /> <line x1="12" x2="15" y1="14" y2="11" /> <circle cx="12" cy="14" r="8" /> </svg> <span class="v mono">3 s</span></div>
+<div class="lb2">strona na telefonie ładuje się dłużej</div>
+<div class="ppl"><i class="p0"></i><i class="p1"></i><i class="p2"></i><i class="p3"></i><i class="p4"></i><i class="p5"></i><i class="p6"></i><i class="p7"></i><i class="p8"></i><i class="p9"></i><i class="p10"></i><i class="p11"></i><i class="p12"></i><i class="p13"></i><i class="p14"></i><i class="p15"></i><i class="p16"></i><i class="p17"></i><i class="p18"></i><i class="p19"></i></div>
+<div class="big"><span class="y">ponad połowa</span> rezygnuje</div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var R = "#s08-root ";
+          var $ = function (s) { return R + s; };
+          var E = "power3.out", IO = "power2.inOut";
+          var tl = gsap.timeline({ paused: true });
+          function count(sel, from, to, t, d, fmt) {
+            var el = document.querySelector(R + sel);
+            var o = { v: from };
+            var f = fmt || function (v) { return Math.round(v).toLocaleString("en-US"); };
+            tl.fromTo(o, { v: from }, { v: to, duration: d, ease: "power2.out", onUpdate: function () { el.textContent = f(o.v); } }, t);
+          }
+          function draw(sel, t, d) {
+            tl.fromTo($(sel), { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: d || 0.5, ease: "power2.out" }, t);
+          }
+          tl.fromTo($(".stage"), { opacity: 0, scale: 1.04 }, { opacity: 1, scale: 1, duration: 0.35, ease: E }, 0);
+          var WX = [0,0.35,0.819,1.131,1.6,1.645,2.136,3.369,3.514,3.95,4.229,5.59,5.791,5.891,6.003,6.204,7.61,8.046,8.559,8.838,9.017,9.229,9.887,10.099,10.4,10.49,10.746,10.825,10.914,12.175,12.298,12.443,12.822,13.38,14.854,15.155,15.367,15.456,15.501,16.059,16.126,16.438,17.923,18.291,18.648,18.827,20.2,20.512,20.78,21.494,21.673,21.751,22.03,23.368,23.759,24.16,24.763,25.053,25.221,25.288,25.622,25.678,25.979,26.225,26.694,26.973,27.252,28.459,29.061,29.307,29.63,29.686,30.032,30.646,31.182,31.238,32.588,32.99,33.514,34.887,35.043,35.367,35.635,35.936,36.025,36.528,36.584,36.84,38.179,38.548,39.195,39.329,39.597,39.664,40.01,40.222,40.322,40.59,40.724,40.869,41.572,41.796,42.164,42.722,44.084,44.53,44.575,44.854,45.367,45.713,45.992,47.309,47.845,47.956], WY = [0,0.298,0.874,1.146,1.646,1.744,2.222,2.924,3.109,3.598,3.891,4.669,4.908,5.017,5.158,5.387,6.273,6.697,7.251,7.491,7.675,7.914,8.426,8.698,8.969,9.078,9.328,9.437,9.534,10.225,10.388,10.551,10.954,11.551,12.481,12.84,13.079,13.188,13.231,13.742,13.873,14.21,15.118,15.477,15.814,15.998,16.798,17.135,17.428,18.081,18.298,18.407,18.701,19.489,19.848,20.359,20.87,21.272,21.479,21.718,22.077,22.174,22.435,22.903,22.99,23.066,23.131,23.583,24.257,24.528,24.778,24.865,25.224,25.779,26.268,26.355,27.22,27.655,28.241,29.052,29.237,29.574,29.911,30.226,30.335,30.802,30.911,31.193,31.928,32.341,32.95,33.145,33.428,33.526,33.939,34.211,34.319,34.624,34.776,34.961,35.624,35.907,36.254,36.852,37.695,38.174,38.217,38.554,39,39.402,39.684,40.43,40.919,41.027];
+          function WARP(t) { var X = WX, Y = WY, n = X.length; if (t <= X[0]) return t; if (t >= X[n - 1]) return Y[n - 1] + (t - X[n - 1]);
+  for (var i = 1; i < n; i++) if (t <= X[i]) { var k = X[i] === X[i - 1] ? 0 : (t - X[i - 1]) / (X[i] - X[i - 1]); return Y[i - 1] + k * (Y[i] - Y[i - 1]); } return t; }
+          var T = function (g) { return WARP(g) - 31.77; };
+
+tl.fromTo($(".src"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(38.1));
+tl.fromTo($(".tm"), { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.45, ease: E }, T(40.6));
+tl.fromTo($(".lb2"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(39.3));
+tl.fromTo($(".ppl i"), { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.25, ease: E, stagger: 0.02 }, T(41.2));
+tl.to([$(".p19"), $(".p18"), $(".p17"), $(".p16"), $(".p15"), $(".p14"), $(".p13"), $(".p12"), $(".p11"), $(".p10"), $(".p9")], { opacity: 0.18, backgroundColor: "#8a9891", duration: 0.3, stagger: 0.04 }, T(42.0));
+tl.fromTo($(".big"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(42.6));
+
+          tl.to($(".stage"), { opacity: 0, scale: 0.97, duration: 0.3, ease: "power2.in" }, 5.45);
+          window.__timelines["s08"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

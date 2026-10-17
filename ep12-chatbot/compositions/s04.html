@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pl">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#s04-root { position:absolute; inset:0; }
+#s04-root .stage { position:absolute; inset:0; }
+
+#s04-root .tag { position:absolute; left:0; right:0; top:200px; text-align:center; font-size:44px; color:var(--muted); }
+#s04-root .ttl { position:absolute; left:80px; right:80px; top:290px; text-align:center; font-size:84px; }
+#s04-root .cw { position:absolute; left:110px; right:110px; border-radius:36px; background:#0e1311; border:1.5px solid var(--line); overflow:hidden; }
+#s04-root .cw .hb { height:100px; display:flex; align-items:center; gap:20px; padding:0 30px; border-bottom:1.5px solid var(--line); font-size:40px; }
+#s04-root .av { width:60px; height:60px; border-radius:50%; background:var(--green); color:#0b0e0d; display:flex; align-items:center; justify-content:center; flex:none; }
+#s04-root .av .ic { width:36px; height:36px; stroke-width:2; }
+#s04-root .cw .hb .st { margin-left:auto; font-size:32px; color:var(--green); }
+#s04-root .ub { position:absolute; right:30px; max-width:640px; padding:20px 28px; border-radius:28px 28px 8px 28px; background:#1d4a39; font-size:42px; }
+#s04-root .bb { position:absolute; left:30px; max-width:680px; padding:20px 28px; border-radius:28px 28px 28px 8px; background:var(--panel); border:1.5px solid var(--line); font-size:42px; line-height:1.25; }
+#s04-root .src { position:absolute; left:30px; padding:10px 20px; border-radius:16px; background:#123526; color:var(--green); font-size:32px; display:flex; align-items:center; gap:10px; }
+#s04-root .src .ic { width:34px; height:34px; stroke-width:2; }
+#s04-root .badge { position:absolute; padding:10px 22px; border-radius:16px; font-size:34px; font-weight:700; display:flex; align-items:center; gap:10px; }
+#s04-root .badge .ic { width:36px; height:36px; stroke-width:2.2; }
+#s04-root .bad { background:#3a2f1a; color:var(--yellow); border:2px solid var(--yellow); }
+#s04-root .row { position:absolute; left:110px; right:110px; height:120px; display:flex; align-items:center; gap:24px; padding:0 34px; border-radius:30px;
+  background:var(--panel); border:1.5px solid var(--line); font-size:46px; }
+#s04-root .row .ic { width:54px; height:54px; stroke-width:1.7; flex:none; }
+
+#s04-root .qa { top:470px; } #s04-root .qa .ic { color:var(--green); }
+#s04-root .fb { top:610px; border-color:#6b5a1a; } #s04-root .fb .ic { color:var(--yellow); }
+#s04-root .pl { position:absolute; left:0; right:0; top:745px; text-align:center; font-size:60px; font-weight:700; color:var(--muted); }
+#s04-root .ai { position:absolute; left:470px; top:830px; width:140px; height:140px; border-radius:40px; background:var(--green); color:#0b0e0d;
+  display:flex; align-items:center; justify-content:center; }
+#s04-root .ai .ic { width:76px; height:76px; stroke-width:1.8; }
+#s04-root .an { position:absolute; left:110px; right:110px; top:1010px; padding:24px 32px; border-radius:30px 30px 30px 8px; background:var(--panel); border:1.5px solid #2b5a45; font-size:44px; }
+#s04-root .rag { position:absolute; left:0; right:0; top:1150px; text-align:center; font-size:46px; color:var(--muted); }
+#s04-root .rag b { color:var(--green); font-size:62px; margin-right:16px; }
+      </style>
+      <div id="s04-root" data-composition-id="s04" data-width="1080" data-height="1920">
+        <div class="stage">
+<div class="tag mono">IT OD ŚRODKA · #12</div>
+<h1 class="hd ttl">Pytanie + <span class="g">fragmenty</span></h1>
+<div class="row qa"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /> </svg> <span>Ile kosztuje dostawa?</span></div>
+<div class="row fb"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z" /> <path d="M14 2v5a1 1 0 0 0 1 1h5" /> <circle cx="11.5" cy="14.5" r="2.5" /> <path d="M13.3 16.3 15 18" /> </svg> <span>„Dostawa kurierem: 15 zł”</span></div>
+<div class="pl">↓</div>
+<div class="ai"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z" /> <path d="M20 2v4" /> <path d="M22 4h-4" /> <circle cx="4" cy="20" r="2" /> </svg> </div>
+<div class="an">Dostawa kurierem kosztuje 15 zł.</div>
+<div class="rag"><b class="mono">RAG</b>najpierw szukaj, potem pisz</div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var R = "#s04-root ";
+          var $ = function (s) { return R + s; };
+          var E = "power3.out", IO = "power2.inOut";
+          var tl = gsap.timeline({ paused: true });
+          function count(sel, from, to, t, d, fmt) {
+            var el = document.querySelector(R + sel);
+            var o = { v: from };
+            var f = fmt || function (v) { return Math.round(v).toLocaleString("en-US"); };
+            tl.fromTo(o, { v: from }, { v: to, duration: d, ease: "power2.out", onUpdate: function () { el.textContent = f(o.v); } }, t);
+          }
+          function draw(sel, t, d) {
+            tl.fromTo($(sel), { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: d || 0.5, ease: "power2.out" }, t);
+          }
+          tl.fromTo($(".stage"), { opacity: 0, scale: 1.04 }, { opacity: 1, scale: 1, duration: 0.35, ease: E }, 0);
+          var WX = [0], WY = [0];
+          function WARP(t) { var X = WX, Y = WY, n = X.length; if (t <= X[0]) return t; if (t >= X[n - 1]) return Y[n - 1] + (t - X[n - 1]);
+  for (var i = 1; i < n; i++) if (t <= X[i]) { var k = X[i] === X[i - 1] ? 0 : (t - X[i - 1]) / (X[i] - X[i - 1]); return Y[i - 1] + k * (Y[i] - Y[i - 1]); } return t; }
+          var T = function (g) { return WARP(g) - 12.25; };
+
+tl.fromTo($(".ttl"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(12.4));
+tl.fromTo($(".fb"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(12.5));
+tl.fromTo($(".qa"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(13.4));
+tl.fromTo($(".pl"), { opacity: 0 }, { opacity: 1, duration: 0.25 }, T(14.3));
+tl.fromTo($(".ai"), { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: E }, T(14.4));
+tl.to($(".ai"), { rotate: 360, duration: 0.8, ease: IO }, T(14.6));
+tl.fromTo($(".an"), { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.4, ease: E }, T(15.1));
+tl.fromTo($(".rag"), { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.4, ease: E }, T(16.75));
+
+          tl.to($(".stage"), { opacity: 0, scale: 0.97, duration: 0.3, ease: "power2.in" }, 4.80);
+          window.__timelines["s04"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

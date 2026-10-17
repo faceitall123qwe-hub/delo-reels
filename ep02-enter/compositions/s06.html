@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pl">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#s06-root { position:absolute; inset:0; }
+#s06-root .stage { position:absolute; inset:0; }
+
+#s06-root .tag { position:absolute; left:0; right:0; top:200px; text-align:center; font-size:44px; color:var(--muted); }
+#s06-root .ttl { position:absolute; left:80px; right:80px; top:290px; text-align:center; font-size:84px; }
+#s06-root .nd { position:absolute; width:250px; height:230px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; color:var(--muted); }
+#s06-root .nd > .ic { width:84px; height:84px; stroke-width:1.4; }
+#s06-root .nd .lb { color:var(--text); font-size:46px; }
+#s06-root .bar { position:absolute; left:100px; right:100px; height:110px; border-radius:55px; background:var(--panel); border:2px solid var(--line);
+  display:flex; align-items:center; gap:22px; padding:0 40px; font-size:54px; }
+#s06-root .bar .ic { width:48px; height:48px; color:var(--muted); stroke-width:1.8; flex:none; }
+#s06-root .ch { display:none; }
+
+#s06-root .k { position:absolute; width:400px; height:130px; display:flex; align-items:center; gap:22px; padding:0 34px; border-radius:26px; background:var(--panel); border:1.5px solid var(--line); font-size:54px; }
+#s06-root .k .ic { width:56px; height:56px; color:var(--green); stroke-width:1.6; }
+#s06-root .k0 { left:120px; top:470px; }
+#s06-root .k1 { left:560px; top:470px; }
+#s06-root .k2 { left:120px; top:630px; }
+#s06-root .k3 { left:560px; top:630px; }
+#s06-root .grid { position:absolute; left:120px; top:850px; width:840px; display:grid; grid-template-columns:repeat(8, 1fr); gap:14px; }
+#s06-root .grid i { display:block; height:70px; border-radius:12px; background:#1f2a26; border:1.5px solid var(--line); }
+#s06-root .cnt { position:absolute; left:0; right:0; top:1150px; text-align:center; font-size:60px; font-weight:600; }
+      </style>
+      <div id="s06-root" data-composition-id="s06" data-width="1080" data-height="1920">
+        <div class="stage">
+<div class="tag mono">IT OD ŚRODKA · #2</div>
+<h1 class="hd ttl">Dociąga <span class="g">pliki</span></h1>
+<div class="k k0"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z" /> <path d="M14 2v5a1 1 0 0 0 1 1h5" /> <path d="M10 12.5 8 15l2 2.5" /> <path d="m14 12.5 2 2.5-2 2.5" /> </svg> <span class="mono">HTML</span></div><div class="k k1"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z" /> <circle cx="13.5" cy="6.5" r=".5" fill="currentColor" /> <circle cx="17.5" cy="10.5" r=".5" fill="currentColor" /> <circle cx="6.5" cy="12.5" r=".5" fill="currentColor" /> <circle cx="8.5" cy="7.5" r=".5" fill="currentColor" /> </svg> <span class="mono">CSS</span></div><div class="k k2"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1" /> <path d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1" /> </svg> <span class="mono">JS</span></div><div class="k k3"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="18" height="18" x="3" y="3" rx="2" ry="2" /> <circle cx="9" cy="9" r="2" /> <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" /> </svg> <span class="mono">zdjęcia</span></div>
+<div class="grid"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="cnt">często <span class="y">kilkadziesiąt</span> plików</div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var R = "#s06-root ";
+          var $ = function (s) { return R + s; };
+          var E = "power3.out", IO = "power2.inOut";
+          var tl = gsap.timeline({ paused: true });
+          function count(sel, from, to, t, d, fmt) {
+            var el = document.querySelector(R + sel);
+            var o = { v: from };
+            var f = fmt || function (v) { return Math.round(v).toLocaleString("en-US"); };
+            tl.fromTo(o, { v: from }, { v: to, duration: d, ease: "power2.out", onUpdate: function () { el.textContent = f(o.v); } }, t);
+          }
+          function draw(sel, t, d) {
+            tl.fromTo($(sel), { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: d || 0.5, ease: "power2.out" }, t);
+          }
+          tl.fromTo($(".stage"), { opacity: 0, scale: 1.04 }, { opacity: 1, scale: 1, duration: 0.35, ease: E }, 0);
+          var WX = [0,0.35,0.819,1.131,1.6,1.645,2.136,3.369,3.514,3.95,4.229,5.59,5.791,5.891,6.003,6.204,7.61,8.046,8.559,8.838,9.017,9.229,9.887,10.099,10.4,10.49,10.746,10.825,10.914,12.175,12.298,12.443,12.822,13.38,14.854,15.155,15.367,15.456,15.501,16.059,16.126,16.438,17.923,18.291,18.648,18.827,20.2,20.512,20.78,21.494,21.673,21.751,22.03,23.368,23.759,24.16,24.763,25.053,25.221,25.288,25.622,25.678,25.979,26.225,26.694,26.973,27.252,28.459,29.061,29.307,29.63,29.686,30.032,30.646,31.182,31.238,32.588,32.99,33.514,34.887,35.043,35.367,35.635,35.936,36.025,36.528,36.584,36.84,38.179,38.548,39.195,39.329,39.597,39.664,40.01,40.222,40.322,40.59,40.724,40.869,41.572,41.796,42.164,42.722,44.084,44.53,44.575,44.854,45.367,45.713,45.992,47.309,47.845,47.956], WY = [0,0.298,0.874,1.146,1.646,1.744,2.222,2.924,3.109,3.598,3.891,4.669,4.908,5.017,5.158,5.387,6.273,6.697,7.251,7.491,7.675,7.914,8.426,8.698,8.969,9.078,9.328,9.437,9.534,10.225,10.388,10.551,10.954,11.551,12.481,12.84,13.079,13.188,13.231,13.742,13.873,14.21,15.118,15.477,15.814,15.998,16.798,17.135,17.428,18.081,18.298,18.407,18.701,19.489,19.848,20.359,20.87,21.272,21.479,21.718,22.077,22.174,22.435,22.903,22.99,23.066,23.131,23.583,24.257,24.528,24.778,24.865,25.224,25.779,26.268,26.355,27.22,27.655,28.241,29.052,29.237,29.574,29.911,30.226,30.335,30.802,30.911,31.193,31.928,32.341,32.95,33.145,33.428,33.526,33.939,34.211,34.319,34.624,34.776,34.961,35.624,35.907,36.254,36.852,37.695,38.174,38.217,38.554,39,39.402,39.684,40.43,40.919,41.027];
+          function WARP(t) { var X = WX, Y = WY, n = X.length; if (t <= X[0]) return t; if (t >= X[n - 1]) return Y[n - 1] + (t - X[n - 1]);
+  for (var i = 1; i < n; i++) if (t <= X[i]) { var k = X[i] === X[i - 1] ? 0 : (t - X[i - 1]) / (X[i] - X[i - 1]); return Y[i - 1] + k * (Y[i] - Y[i - 1]); } return t; }
+          var T = function (g) { return WARP(g) - 23.49; };
+
+tl.fromTo($(".ttl"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(28.3));
+tl.fromTo($(".k0"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(28.46));
+tl.fromTo($(".k1"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(30.03));
+tl.fromTo($(".k2"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(30.65));
+tl.fromTo($(".k3"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(31.24));
+tl.fromTo($(".grid i"), { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.25, ease: E, stagger: 0.04 }, T(31.8));
+tl.fromTo($(".cnt"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(32.9));
+
+          tl.to($(".stage"), { opacity: 0, scale: 0.97, duration: 0.3, ease: "power2.in" }, 5.09);
+          window.__timelines["s06"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

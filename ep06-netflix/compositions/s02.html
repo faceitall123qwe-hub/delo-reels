@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pl">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#s02-root { position:absolute; inset:0; }
+#s02-root .stage { position:absolute; inset:0; }
+
+#s02-root .tag { position:absolute; left:0; right:0; top:200px; text-align:center; font-size:44px; color:var(--muted); }
+#s02-root .ttl { position:absolute; left:80px; right:80px; top:290px; text-align:center; font-size:84px; }
+#s02-root .num { color:var(--yellow); }
+#s02-root .nd { position:absolute; width:300px; height:200px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; color:var(--muted); }
+#s02-root .nd > .ic { width:76px; height:76px; stroke-width:1.4; }
+#s02-root .nd .lb { color:var(--text); font-size:46px; }
+
+#s02-root .nd.w { width:490px; }
+#s02-root .us { left:140px; top:440px; opacity:.55; height:190px; }
+#s02-root .op { left:140px; top:740px; height:250px; border-color:rgba(62,224,143,.6); }
+#s02-root .op .nl { font-size:42px; color:var(--green); }
+#s02-root .you { left:140px; top:1100px; height:190px; }
+#s02-root .wire .far { stroke:#4a5751; stroke-width:4; stroke-dasharray:14 14; }
+#s02-root .wire .near { stroke:var(--green); stroke-width:6; }
+#s02-root .xl { position:absolute; left:680px; top:440px; display:flex; align-items:center; gap:12px; color:var(--yellow); font-size:46px; }
+#s02-root .xl .ic { width:46px; height:46px; stroke-width:2.2; }
+      </style>
+      <div id="s02-root" data-composition-id="s02" data-width="1080" data-height="1920">
+        <div class="stage">
+<div class="tag mono">IT OD ŚRODKA · #6</div>
+<h1 class="hd ttl"><span class="num">1.</span> Serwer <span class="g">blisko ciebie</span></h1>
+<svg class="wire" viewBox="0 0 1080 1920"><path class="far" d="M630 535 C 960 600, 960 1130, 630 1195"/><path class="near" pathLength="1" d="M385 990 L385 1100"/></svg>
+<div class="card nd w us"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <circle cx="12" cy="12" r="10" /> <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /> <path d="M2 12h20" /> </svg> <span class="lb">USA</span></div>
+<div class="card nd w op"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M10 12h4" /> <path d="M10 8h4" /> <path d="M14 21v-3a2 2 0 0 0-4 0v3" /> <path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2" /> <path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16" /> </svg> <span class="lb">twój operator</span><span class="nl mono">+ serwer Netflix</span></div>
+<div class="card nd w you"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="m17 2-5 5-5-5" /> <rect width="20" height="15" x="2" y="7" rx="2" /> </svg> <span class="lb">ty</span></div>
+<div class="xl"><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M18 6 6 18" /> <path d="m6 6 12 12" /> </svg> <span>za daleko</span></div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var R = "#s02-root ";
+          var $ = function (s) { return R + s; };
+          var E = "power3.out", IO = "power2.inOut";
+          var tl = gsap.timeline({ paused: true });
+          function count(sel, from, to, t, d, fmt) {
+            var el = document.querySelector(R + sel);
+            var o = { v: from };
+            var f = fmt || function (v) { return Math.round(v).toLocaleString("en-US"); };
+            tl.fromTo(o, { v: from }, { v: to, duration: d, ease: "power2.out", onUpdate: function () { el.textContent = f(o.v); } }, t);
+          }
+          function draw(sel, t, d) {
+            tl.fromTo($(sel), { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: d || 0.5, ease: "power2.out" }, t);
+          }
+          tl.fromTo($(".stage"), { opacity: 0, scale: 1.04 }, { opacity: 1, scale: 1, duration: 0.35, ease: E }, 0);
+          var WX = [0], WY = [0];
+          function WARP(t) { var X = WX, Y = WY, n = X.length; if (t <= X[0]) return t; if (t >= X[n - 1]) return Y[n - 1] + (t - X[n - 1]);
+  for (var i = 1; i < n; i++) if (t <= X[i]) { var k = X[i] === X[i - 1] ? 0 : (t - X[i - 1]) / (X[i] - X[i - 1]); return Y[i - 1] + k * (Y[i] - Y[i - 1]); } return t; }
+          var T = function (g) { return WARP(g) - 6; };
+
+tl.fromTo($(".ttl"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(6.2));
+tl.fromTo($(".you"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(7.4));
+tl.fromTo($(".op"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, T(9.4));
+tl.fromTo($(".op .nl"), { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4, ease: E }, T(11.7));
+tl.fromTo([$(".us"), $(".far")], { opacity: 0 }, { opacity: 0.55, duration: 0.5 }, T(13.4));
+tl.fromTo($(".xl"), { opacity: 0, x: -10 }, { opacity: 1, x: 0, duration: 0.4, ease: E }, T(14.0));
+draw(".near", T(15.3), 0.6);
+
+          tl.to($(".stage"), { opacity: 0, scale: 0.97, duration: 0.3, ease: "power2.in" }, 10.10);
+          window.__timelines["s02"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pl">
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#s01-root { position:absolute; inset:0; }
+#s01-root .stage { position:absolute; inset:0; }
+
+#s01-root .tag { position:absolute; left:0; right:0; top:200px; text-align:center; font-size:44px; color:var(--muted); }
+#s01-root .ttl { position:absolute; left:80px; right:80px; top:290px; text-align:center; font-size:84px; }
+#s01-root .num { color:var(--yellow); }
+#s01-root .nd { position:absolute; width:300px; height:200px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; color:var(--muted); }
+#s01-root .nd > .ic { width:76px; height:76px; stroke-width:1.4; }
+#s01-root .nd .lb { color:var(--text); font-size:46px; }
+
+#s01-root .q { position:absolute; left:80px; right:80px; top:300px; text-align:center; font-size:96px; }
+#s01-root .scr { position:absolute; left:120px; right:120px; top:600px; height:470px; border-radius:30px; background:#0e1311; border:1.5px solid var(--line); overflow:hidden; }
+#s01-root .scr .frame { position:absolute; left:24px; right:24px; top:24px; bottom:80px; border-radius:18px; background:linear-gradient(135deg, #16352a, #10221c 55%, #2b2a14); }
+#s01-root .scr .ic { position:absolute; left:50%; top:42%; width:110px; height:110px; margin:-55px 0 0 -55px; color:var(--text); stroke-width:1.5; }
+#s01-root .scr .pb { position:absolute; left:24px; right:24px; bottom:36px; height:10px; border-radius:5px; background:var(--line); overflow:hidden; }
+#s01-root .scr .pb i { display:block; width:100%; height:100%; background:var(--green); }
+#s01-root .homes { position:absolute; left:120px; right:120px; top:1110px; display:grid; grid-template-columns:repeat(10, 1fr); gap:12px; }
+#s01-root .homes i { display:block; height:40px; border-radius:10px; background:#1f2a26; }
+#s01-root .tricks { position:absolute; left:0; right:0; top:1230px; display:flex; justify-content:center; gap:24px; }
+#s01-root .tricks span { width:110px; height:110px; border-radius:30px; background:var(--panel); border:2px solid var(--yellow); color:var(--yellow);
+  display:flex; align-items:center; justify-content:center; font-size:60px; font-weight:700; }
+      </style>
+      <div id="s01-root" data-composition-id="s01" data-width="1080" data-height="1920">
+        <div class="stage">
+<div class="tag mono">IT OD ŚRODKA · #6</div>
+<h1 class="hd q">Dlaczego Netflix <span class="g">się nie zacina</span>?</h1>
+<div class="scr"><div class="frame"></div><svg class="ic " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z" /> </svg> <div class="pb"><i></i></div></div>
+<div class="homes"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="tricks"><span>1</span><span>2</span><span>3</span></div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          var R = "#s01-root ";
+          var $ = function (s) { return R + s; };
+          var E = "power3.out", IO = "power2.inOut";
+          var tl = gsap.timeline({ paused: true });
+          function count(sel, from, to, t, d, fmt) {
+            var el = document.querySelector(R + sel);
+            var o = { v: from };
+            var f = fmt || function (v) { return Math.round(v).toLocaleString("en-US"); };
+            tl.fromTo(o, { v: from }, { v: to, duration: d, ease: "power2.out", onUpdate: function () { el.textContent = f(o.v); } }, t);
+          }
+          function draw(sel, t, d) {
+            tl.fromTo($(sel), { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: d || 0.5, ease: "power2.out" }, t);
+          }
+          tl.fromTo($(".stage"), { opacity: 0, scale: 1.04 }, { opacity: 1, scale: 1, duration: 0.35, ease: E }, 0);
+          var WX = [0], WY = [0];
+          function WARP(t) { var X = WX, Y = WY, n = X.length; if (t <= X[0]) return t; if (t >= X[n - 1]) return Y[n - 1] + (t - X[n - 1]);
+  for (var i = 1; i < n; i++) if (t <= X[i]) { var k = X[i] === X[i - 1] ? 0 : (t - X[i - 1]) / (X[i] - X[i - 1]); return Y[i - 1] + k * (Y[i] - Y[i - 1]); } return t; }
+          var T = function (g) { return WARP(g) - 0; };
+
+tl.fromTo($(".tag"), { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0);
+tl.fromTo($(".q"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, 0.05);
+tl.fromTo($(".scr"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: E }, 0.2);
+tl.fromTo($(".scr .pb i"), { scaleX: 0.08, transformOrigin: "0% 50%" }, { scaleX: 0.5, duration: 5.5, ease: "none" }, 0.4);
+tl.to($(".scr .ic"), { opacity: 0, scale: 0.8, duration: 0.3 }, T(1.9));
+tl.fromTo($(".homes i"), { opacity: 0 }, { opacity: 1, duration: 0.2, stagger: 0.03 }, T(2.9));
+tl.to($(".homes i"), { backgroundColor: "#3ee08f", duration: 0.2, stagger: 0.03 }, T(3.7));
+tl.fromTo($(".tricks span"), { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: E, stagger: 0.12 }, T(5.2));
+
+          tl.to($(".stage"), { opacity: 0, scale: 0.97, duration: 0.3, ease: "power2.in" }, 5.70);
+          window.__timelines["s01"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>
