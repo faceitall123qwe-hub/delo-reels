@@ -1,6 +1,6 @@
 #!/bin/bash
 # usage: ./voice.sh epNN-slug  -> TTS (retry), tighten pauses, loudnorm
-cd "/c/Users/hp/Desktop/Claude Projects/delo-reels/$1" || exit 1
+cd "$(dirname "$0")/$1" || exit 1
 rm -f assets/audio/vo.mp3 assets/audio/vo.json
 for k in 1 2 3 4 5; do [ -f assets/audio/vo.json ] && break; node scripts/tts.mjs >/dev/null 2>&1 || sleep 2; done
 [ -f assets/audio/vo.json ] || { echo "$1 TTS FAILED"; exit 1; }

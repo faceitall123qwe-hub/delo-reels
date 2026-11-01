@@ -1,7 +1,7 @@
 #!/bin/bash
 # usage: ./render-one.sh epNN-slug output-name.mp4
-D="/c/Users/hp/Desktop/Filmy MP4"
-cd "/c/Users/hp/Desktop/Claude Projects/delo-reels/$1" || exit 1
+D="${OUT_DIR:-$HOME/Desktop/Filmy MP4}"
+cd "$(dirname "$0")/$1" || exit 1
 rm -rf out && mkdir -p out
 npx --yes hyperframes@0.8.134 render --fps 30 --quality high --output out/r.mp4 2>&1 | grep -E "MB ·|✗|rror" | sed "s/^/$1: /"
 if [ -f out/r.mp4 ]; then
